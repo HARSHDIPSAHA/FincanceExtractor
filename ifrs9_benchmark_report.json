@@ -1,0 +1,842 @@
+{
+  "next_plc": {
+    "company": "Next plc",
+    "report_url": "https://www.nextplc.co.uk/~/media/Files/N/next-plc-v4/about-next/annual-report-and-accounts-jan-2026.pdf",
+    "report_period": null,
+    "model_structure": {
+      "value": "Simplified approach (lifetime ECL); Segmentation logic disclosed",
+      "evidence": [
+        {
+          "text": "Delinquency and default are relevant for the estimation of ECL, which segments the book by customer indebtedness, banded into 4 risk bands by arrears stage (see Note 30).",
+          "source_url": "https://www.nextplc.co.uk/~/media/Files/N/next-plc-v4/about-next/annual-report-and-accounts-jan-2026.pdf",
+          "location": null
+        },
+        {
+          "text": "The debt is segmented by arrears stage, Experian\u2019s Consumer Indebtedness Index (a measure of customers\u2019 affordability) and expected time of default.",
+          "source_url": "https://www.nextplc.co.uk/~/media/Files/N/next-plc-v4/about-next/annual-report-and-accounts-jan-2026.pdf",
+          "location": null
+        }
+      ]
+    },
+    "scenario_design": {
+      "value": "4 scenarios: Base, Upside, Downside, Extreme; weights: 5/5/5/5",
+      "evidence": [
+        {
+          "text": "The ECL model applies four macroeconomic scenarios including a base case which is viewed by management to be the most likely outturn, together with an upside, downside and extreme scenario.",
+          "source_url": "https://www.nextplc.co.uk/~/media/Files/N/next-plc-v4/about-next/annual-report-and-accounts-jan-2026.pdf",
+          "location": null
+        },
+        {
+          "text": "A 45% weighting is applied to the base case and 5% to the upside scenario, 35% to the downside scenario and 15% to the extreme scenario.",
+          "source_url": "https://www.nextplc.co.uk/~/media/Files/N/next-plc-v4/about-next/annual-report-and-accounts-jan-2026.pdf",
+          "location": null
+        },
+        {
+          "text": "Management use an independent forecast of unemployment, provided by Experian, and weights the effect of the expected (base case), upside, downside and extreme scenarios in the proportions 45/5/35/15.",
+          "source_url": "https://www.nextplc.co.uk/~/media/Files/N/next-plc-v4/about-next/annual-report-and-accounts-jan-2026.pdf",
+          "location": null
+        }
+      ]
+    },
+    "key_parameters": {
+      "value": "PD disclosed; LGD disclosed; EAD disclosed; Forward-looking variables disclosed",
+      "evidence": [
+        {
+          "text": "193 Strategic ReportGovernanceShareholder Information Financial Statements GroupCompany [Page 196] GROUP ACCOUNTING POLICIES Customer and Other Receivables (continued) ECL is the product of the probability of default (PD), exposure at default (EAD) and loss given default (LGD), discounted at the original EIR.",
+          "source_url": "https://www.nextplc.co.uk/~/media/Files/N/next-plc-v4/about-next/annual-report-and-accounts-jan-2026.pdf",
+          "location": null
+        },
+        {
+          "text": "The key inputs into the ECL calculation are: PD: \u201cProbability of Default\u201d is an estimate of the likelihood of default over the expected lifetime of the debt.",
+          "source_url": "https://www.nextplc.co.uk/~/media/Files/N/next-plc-v4/about-next/annual-report-and-accounts-jan-2026.pdf",
+          "location": null
+        },
+        {
+          "text": "193 Strategic ReportGovernanceShareholder Information Financial Statements GroupCompany [Page 196] GROUP ACCOUNTING POLICIES Customer and Other Receivables (continued) ECL is the product of the probability of default (PD), exposure at default (EAD) and loss given default (LGD), discounted at the original EIR.",
+          "source_url": "https://www.nextplc.co.uk/~/media/Files/N/next-plc-v4/about-next/annual-report-and-accounts-jan-2026.pdf",
+          "location": null
+        },
+        {
+          "text": "LGD: \u201cLoss Given Default\u201d is an estimate of the loss arising in the case where a default occurs at a given time.",
+          "source_url": "https://www.nextplc.co.uk/~/media/Files/N/next-plc-v4/about-next/annual-report-and-accounts-jan-2026.pdf",
+          "location": null
+        },
+        {
+          "text": "193 Strategic ReportGovernanceShareholder Information Financial Statements GroupCompany [Page 196] GROUP ACCOUNTING POLICIES Customer and Other Receivables (continued) ECL is the product of the probability of default (PD), exposure at default (EAD) and loss given default (LGD), discounted at the original EIR.",
+          "source_url": "https://www.nextplc.co.uk/~/media/Files/N/next-plc-v4/about-next/annual-report-and-accounts-jan-2026.pdf",
+          "location": null
+        },
+        {
+          "text": "EAD: \u201cExposure at Default\u201d is an estimate of the exposure at that future default date, taking into account expected changes in the exposure after the reporting date, i.e.",
+          "source_url": "https://www.nextplc.co.uk/~/media/Files/N/next-plc-v4/about-next/annual-report-and-accounts-jan-2026.pdf",
+          "location": null
+        }
+      ]
+    },
+    "gross_exposure": 1584.7,
+    "ecl_allowance": -169.3,
+    "coverage_ratio": 0.10683410109168928,
+    "coverage_ratio_method": "derived",
+    "core_ecl_table": {
+      "title": "PDF extracted table page 220",
+      "columns": [
+        "Row",
+        "Value 1",
+        "Value 2",
+        "Value 3"
+      ],
+      "rows": [
+        [
+          "Gross customer receivables excluding Interest Free Credit receivable",
+          "1,555.7",
+          "1,546.5",
+          ""
+        ],
+        [
+          "Interest Free Credit receivable",
+          "29.0",
+          "9.3",
+          ""
+        ],
+        [
+          "Gross customer receivables",
+          "1,584.7",
+          "1,555.8",
+          ""
+        ],
+        [
+          "Net customer receivables",
+          "1,533.5",
+          "1,504.3",
+          ""
+        ],
+        [
+          "Less: allowance for expected credit losses",
+          "(165.4)",
+          "(181.6)",
+          ""
+        ],
+        [
+          "Other trade receivables",
+          "143.7",
+          "47.9",
+          ""
+        ],
+        [
+          "Less: allowance for doubtful debts",
+          "(3.9)",
+          "(1.4)",
+          ""
+        ],
+        [
+          "Net customer receivables",
+          "1,533.5",
+          "1,504.3",
+          ""
+        ],
+        [
+          "Other trade receivables",
+          "143.7",
+          "47.9",
+          ""
+        ],
+        [
+          "Less: allowance for expected credit losses and doubtful debts",
+          "(169.3)",
+          "(183.0)",
+          ""
+        ],
+        [
+          "The Group applies the simplified approach to providing for expected credit losses prescribed by IFRS",
+          "9,",
+          "",
+          ""
+        ],
+        [
+          "Risk band",
+          "1",
+          "30)",
+          ""
+        ],
+        [
+          "The fair value of customer receivables and other trade receivables is approximately \u00a3",
+          "1,490",
+          "(2025",
+          "1,340"
+        ]
+      ],
+      "source_url": "https://www.nextplc.co.uk/~/media/Files/N/next-plc-v4/about-next/annual-report-and-accounts-jan-2026.pdf",
+      "location": "page-220"
+    },
+    "staging_table": {
+      "title": "PDF extracted table page 220",
+      "columns": [
+        "Row",
+        "Value 1",
+        "Value 2",
+        "Value 3"
+      ],
+      "rows": [
+        [
+          "Gross customer receivables excluding Interest Free Credit receivable",
+          "1,555.7",
+          "1,546.5",
+          ""
+        ],
+        [
+          "Interest Free Credit receivable",
+          "29.0",
+          "9.3",
+          ""
+        ],
+        [
+          "Gross customer receivables",
+          "1,584.7",
+          "1,555.8",
+          ""
+        ],
+        [
+          "Net customer receivables",
+          "1,533.5",
+          "1,504.3",
+          ""
+        ],
+        [
+          "Less: allowance for expected credit losses",
+          "(165.4)",
+          "(181.6)",
+          ""
+        ],
+        [
+          "Other trade receivables",
+          "143.7",
+          "47.9",
+          ""
+        ],
+        [
+          "Less: allowance for doubtful debts",
+          "(3.9)",
+          "(1.4)",
+          ""
+        ],
+        [
+          "Net customer receivables",
+          "1,533.5",
+          "1,504.3",
+          ""
+        ],
+        [
+          "Other trade receivables",
+          "143.7",
+          "47.9",
+          ""
+        ],
+        [
+          "Less: allowance for expected credit losses and doubtful debts",
+          "(169.3)",
+          "(183.0)",
+          ""
+        ],
+        [
+          "The Group applies the simplified approach to providing for expected credit losses prescribed by IFRS",
+          "9,",
+          "",
+          ""
+        ],
+        [
+          "Risk band",
+          "1",
+          "30)",
+          ""
+        ],
+        [
+          "The fair value of customer receivables and other trade receivables is approximately \u00a3",
+          "1,490",
+          "(2025",
+          "1,340"
+        ]
+      ],
+      "source_url": "https://www.nextplc.co.uk/~/media/Files/N/next-plc-v4/about-next/annual-report-and-accounts-jan-2026.pdf",
+      "location": "page-220"
+    },
+    "ageing_table": null,
+    "impairment_movement_table": {
+      "title": "PDF extracted table page 188",
+      "columns": [
+        "Row",
+        "Value 1",
+        "Value 2",
+        "Value 3"
+      ],
+      "rows": [
+        [
+          "Net cash from operating activities",
+          "1,233.6",
+          "1,133.9",
+          ""
+        ],
+        [
+          "Net cash used in investing activities",
+          "(119.9)",
+          "(181.2)",
+          ""
+        ],
+        [
+          "Net cash used in financing activities",
+          "(1,225.0)",
+          "(939.6)",
+          ""
+        ],
+        [
+          "Net (decrease)/increase in cash and cash equivalents",
+          "(111.3)",
+          "13.1",
+          ""
+        ],
+        [
+          "Opening cash and cash equivalents",
+          "171.3",
+          "124.3",
+          ""
+        ],
+        [
+          "Closing cash and cash equivalents",
+          "32",
+          "60.2",
+          "171.3"
+        ]
+      ],
+      "source_url": "https://www.nextplc.co.uk/~/media/Files/N/next-plc-v4/about-next/annual-report-and-accounts-jan-2026.pdf",
+      "location": "page-188"
+    },
+    "notes": [],
+    "source_documents": [
+      "https://www.nextplc.co.uk/~/media/Files/N/next-plc-v4/about-next/annual-report-and-accounts-jan-2026.pdf"
+    ]
+  },
+  "frasers_group": {
+    "company": "Frasers Group",
+    "report_url": "https://frasers-cms.netlify.app/assets/files/financials/fg-annual-report-2025-web.pdf",
+    "report_period": null,
+    "model_structure": {
+      "value": "3-stage IFRS 9 model; Segmentation logic disclosed",
+      "evidence": [
+        {
+          "text": "PrINCIPAL rISKS AND UNCEr TAINTIES FRASERS GROUP PLC 59 [Page 60] Treasury, Liquidity and Credit Risks Short, medium and long-term funding arrangements support our business operations and our ability to meet our financial obligations and deliver our strategic ambitions.",
+          "source_url": "https://frasers-cms.netlify.app/assets/files/financials/fg-annual-report-2025-web.pdf",
+          "location": null
+        },
+        {
+          "text": "Credit risk primarily arises from amounts advanced to customers by Frasers Group Financial Services to facilitate purchases via the Frasers Plus consumer credit products.",
+          "source_url": "https://frasers-cms.netlify.app/assets/files/financials/fg-annual-report-2025-web.pdf",
+          "location": null
+        }
+      ]
+    },
+    "scenario_design": {
+      "value": "4 scenarios: Base, Upside, Downside, Extreme; weights: 5/5/0/5",
+      "evidence": [
+        {
+          "text": "Changing the weighting of macro-economic scenarios to a more positive outlook so that the severe-case scenario\u2019s weighting is reduced to 5% and base increased by 5% to 55% (with upside increasing by 5% to 10% and downside remaining at 30%) would result in the impairment provision reducing by approximately \u00a31.2m.",
+          "source_url": "https://frasers-cms.netlify.app/assets/files/financials/fg-annual-report-2025-web.pdf",
+          "location": null
+        },
+        {
+          "text": "The latest economic scenarios used in the model along with the probably weighting applied to each are summarised as follows: Scenario Qualitative explanation Probability weighting applied Upside Inflation returns quickly to target despite strong growth and the Bank of England cuts interest rates to 4% by mid-2025.",
+          "source_url": "https://frasers-cms.netlify.app/assets/files/financials/fg-annual-report-2025-web.pdf",
+          "location": null
+        },
+        {
+          "text": "In making this assessment the following were taken into consideration: \u2022 FY26 budget and forecast three-year projections up to FY28 (Comprising of monthly income statements, balance sheets and cash flow statements) \u2022 Critical assumptions underlying the budget and forecasts \u2022 Sensitivity analysis for severe but plausible downside scenarios \u2022 Analysis for mitigating factors to be applied to downsides scenarios \u2022 Availability of borrowing facilities taking into account the recent refinancing of the Group\u2019s term loan and revolving credit facilities (including review of covenants) \u2022 on-going litigation \u2022 Macro-economic and geopolitical factors including (but not limited to) the impact of tariffs and increasing employment costs following on from the UK budget in November 2024.",
+          "source_url": "https://frasers-cms.netlify.app/assets/files/financials/fg-annual-report-2025-web.pdf",
+          "location": null
+        },
+        {
+          "text": "Management has assessed the level of trading and has forecast and projected a conservative base case and also a number of even more conservative scenarios, including taking into account the Group\u2019s open positions in relation to Hugo Boss options.",
+          "source_url": "https://frasers-cms.netlify.app/assets/files/financials/fg-annual-report-2025-web.pdf",
+          "location": null
+        }
+      ]
+    },
+    "key_parameters": {
+      "value": "PD disclosed; LGD disclosed; EAD disclosed; Forward-looking variables disclosed",
+      "evidence": [
+        {
+          "text": "The key assumptions in the ECL calculations are: \u2022 Probability of Default (\u201cPD\u201d) - an estimate of the likelihood of default over 12 months and the expected lifetime of the debt; \u2022 Exposure at Default (\u201cEAD\u201d) - an estimate of the exposure at a future default date, taking into account expected changes in the exposure after the reporting date, including repayments of principal and interest, whether scheduled by the contract or otherwise, and accrued interest from missed payments; and \u2022 Loss Given Default (\u201cLGD\u201d) - an estimate of the loss arising in the case where a default occurs at a given time.",
+          "source_url": "https://frasers-cms.netlify.app/assets/files/financials/fg-annual-report-2025-web.pdf",
+          "location": null
+        },
+        {
+          "text": "12 FRASERS GROUP PLC CHAIr\u2019S STATEMENT [Page 13] In January, we updated Frasers Fit, our holistic employee wellbeing programme with a focus on Move, Money and Mind.",
+          "source_url": "https://frasers-cms.netlify.app/assets/files/financials/fg-annual-report-2025-web.pdf",
+          "location": null
+        },
+        {
+          "text": "The key assumptions in the ECL calculations are: \u2022 Probability of Default (\u201cPD\u201d) - an estimate of the likelihood of default over 12 months and the expected lifetime of the debt; \u2022 Exposure at Default (\u201cEAD\u201d) - an estimate of the exposure at a future default date, taking into account expected changes in the exposure after the reporting date, including repayments of principal and interest, whether scheduled by the contract or otherwise, and accrued interest from missed payments; and \u2022 Loss Given Default (\u201cLGD\u201d) - an estimate of the loss arising in the case where a default occurs at a given time.",
+          "source_url": "https://frasers-cms.netlify.app/assets/files/financials/fg-annual-report-2025-web.pdf",
+          "location": null
+        },
+        {
+          "text": "Expected credit loss An appropriate allowance for expected credit loss in respect of trade receivables is derived from estimates and underlying assumptions such as the Probability of Default and the Loss Given Default, taking into consideration forward looking macro-economic assumptions.",
+          "source_url": "https://frasers-cms.netlify.app/assets/files/financials/fg-annual-report-2025-web.pdf",
+          "location": null
+        },
+        {
+          "text": "The key assumptions in the ECL calculations are: \u2022 Probability of Default (\u201cPD\u201d) - an estimate of the likelihood of default over 12 months and the expected lifetime of the debt; \u2022 Exposure at Default (\u201cEAD\u201d) - an estimate of the exposure at a future default date, taking into account expected changes in the exposure after the reporting date, including repayments of principal and interest, whether scheduled by the contract or otherwise, and accrued interest from missed payments; and \u2022 Loss Given Default (\u201cLGD\u201d) - an estimate of the loss arising in the case where a default occurs at a given time.",
+          "source_url": "https://frasers-cms.netlify.app/assets/files/financials/fg-annual-report-2025-web.pdf",
+          "location": null
+        },
+        {
+          "text": "[Page 2] ABOUT FRASERS GROUP FRASERS GROUP STARTED AS A SMALL STORE IN MAIDENHEAD IN 1982 AND FROM THERE, GREW TO BECOME AN INTERNATIONAL POWERHOUSE.",
+          "source_url": "https://frasers-cms.netlify.app/assets/files/financials/fg-annual-report-2025-web.pdf",
+          "location": null
+        }
+      ]
+    },
+    "gross_exposure": 254.9,
+    "ecl_allowance": -73.2,
+    "coverage_ratio": 0.287171439780306,
+    "coverage_ratio_method": "derived",
+    "core_ecl_table": {
+      "title": "PDF extracted table page 152",
+      "columns": [
+        "Row",
+        "Value 1",
+        "Value 2"
+      ],
+      "rows": [
+        [
+          "the period, net reversal of provisions amounted to \u00a3",
+          "8.8",
+          ""
+        ],
+        [
+          "provision for expected credit loss). At",
+          "27",
+          "2025,"
+        ],
+        [
+          "trade receivables with a gross value of \u00a3",
+          "254.9",
+          ""
+        ],
+        [
+          "balance sheet, less a provision for impairment of \u00a3",
+          "73.2",
+          ""
+        ]
+      ],
+      "source_url": "https://frasers-cms.netlify.app/assets/files/financials/fg-annual-report-2025-web.pdf",
+      "location": "page-152"
+    },
+    "staging_table": {
+      "title": "PDF extracted table page 185",
+      "columns": [
+        "Row",
+        "Value 1",
+        "Value 2",
+        "Value 3",
+        "Value 4",
+        "Value 5"
+      ],
+      "rows": [
+        [
+          "Not past due",
+          "178.2",
+          "16.4",
+          "194.6",
+          "206.7",
+          "15.7"
+        ],
+        [
+          "Gross trade receivables",
+          "236.9",
+          "18.0",
+          "254.9",
+          "270.3",
+          "16.6"
+        ],
+        [
+          "Allowance for expected credit loss",
+          "(61.7)",
+          "(11.5)",
+          "(73.2)",
+          "(69.0)",
+          "(11.7)"
+        ],
+        [
+          "Stage",
+          "1",
+          "2",
+          "3",
+          "",
+          ""
+        ],
+        [
+          "Gross trade receivables",
+          "157.6",
+          "43.4",
+          "53.9",
+          "254.9",
+          ""
+        ],
+        [
+          "opening balance",
+          "(17.7)",
+          "(18.9)",
+          "(44.1)",
+          "(80.7)",
+          ""
+        ],
+        [
+          "Impairment charge -",
+          "(6.3)",
+          "(18.2)",
+          "(24.5)",
+          "",
+          ""
+        ],
+        [
+          "Closing balance",
+          "(11.7)",
+          "(17.3)",
+          "(44.2)",
+          "(73.2)",
+          ""
+        ],
+        [
+          "Stage",
+          "1",
+          "2",
+          "3",
+          "",
+          ""
+        ],
+        [
+          "Gross trade receivables",
+          "185.6",
+          "47.3",
+          "54.0",
+          "286.9",
+          ""
+        ],
+        [
+          "opening balance",
+          "(17.2)",
+          "(37.2)",
+          "(45.7)",
+          "(100.1)",
+          ""
+        ],
+        [
+          "Impairment (charge)/release",
+          "(6.9)",
+          "5.0",
+          "(19.9)",
+          "(21.8)",
+          ""
+        ],
+        [
+          "Closing balance",
+          "(17.7)",
+          "(18.9)",
+          "(44.1)",
+          "(80.7)",
+          ""
+        ],
+        [
+          "Impairment charge impacting on provision",
+          "(24.5)",
+          "(21.8)",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Impairment charge",
+          "(22.1)",
+          "(20.6)",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "source_url": "https://frasers-cms.netlify.app/assets/files/financials/fg-annual-report-2025-web.pdf",
+      "location": "page-185"
+    },
+    "ageing_table": {
+      "title": "PDF extracted table page 185",
+      "columns": [
+        "Row",
+        "Value 1",
+        "Value 2",
+        "Value 3",
+        "Value 4",
+        "Value 5"
+      ],
+      "rows": [
+        [
+          "Not past due",
+          "178.2",
+          "16.4",
+          "194.6",
+          "206.7",
+          "15.7"
+        ],
+        [
+          "Gross trade receivables",
+          "236.9",
+          "18.0",
+          "254.9",
+          "270.3",
+          "16.6"
+        ],
+        [
+          "Allowance for expected credit loss",
+          "(61.7)",
+          "(11.5)",
+          "(73.2)",
+          "(69.0)",
+          "(11.7)"
+        ],
+        [
+          "Stage",
+          "1",
+          "2",
+          "3",
+          "",
+          ""
+        ],
+        [
+          "Gross trade receivables",
+          "157.6",
+          "43.4",
+          "53.9",
+          "254.9",
+          ""
+        ],
+        [
+          "opening balance",
+          "(17.7)",
+          "(18.9)",
+          "(44.1)",
+          "(80.7)",
+          ""
+        ],
+        [
+          "Impairment charge -",
+          "(6.3)",
+          "(18.2)",
+          "(24.5)",
+          "",
+          ""
+        ],
+        [
+          "Closing balance",
+          "(11.7)",
+          "(17.3)",
+          "(44.2)",
+          "(73.2)",
+          ""
+        ],
+        [
+          "Stage",
+          "1",
+          "2",
+          "3",
+          "",
+          ""
+        ],
+        [
+          "Gross trade receivables",
+          "185.6",
+          "47.3",
+          "54.0",
+          "286.9",
+          ""
+        ],
+        [
+          "opening balance",
+          "(17.2)",
+          "(37.2)",
+          "(45.7)",
+          "(100.1)",
+          ""
+        ],
+        [
+          "Impairment (charge)/release",
+          "(6.9)",
+          "5.0",
+          "(19.9)",
+          "(21.8)",
+          ""
+        ],
+        [
+          "Closing balance",
+          "(17.7)",
+          "(18.9)",
+          "(44.1)",
+          "(80.7)",
+          ""
+        ],
+        [
+          "Impairment charge impacting on provision",
+          "(24.5)",
+          "(21.8)",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Impairment charge",
+          "(22.1)",
+          "(20.6)",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "source_url": "https://frasers-cms.netlify.app/assets/files/financials/fg-annual-report-2025-web.pdf",
+      "location": "page-185"
+    },
+    "impairment_movement_table": {
+      "title": "PDF extracted table page 185",
+      "columns": [
+        "Row",
+        "Value 1",
+        "Value 2",
+        "Value 3",
+        "Value 4",
+        "Value 5"
+      ],
+      "rows": [
+        [
+          "Not past due",
+          "178.2",
+          "16.4",
+          "194.6",
+          "206.7",
+          "15.7"
+        ],
+        [
+          "Gross trade receivables",
+          "236.9",
+          "18.0",
+          "254.9",
+          "270.3",
+          "16.6"
+        ],
+        [
+          "Allowance for expected credit loss",
+          "(61.7)",
+          "(11.5)",
+          "(73.2)",
+          "(69.0)",
+          "(11.7)"
+        ],
+        [
+          "Stage",
+          "1",
+          "2",
+          "3",
+          "",
+          ""
+        ],
+        [
+          "Gross trade receivables",
+          "157.6",
+          "43.4",
+          "53.9",
+          "254.9",
+          ""
+        ],
+        [
+          "opening balance",
+          "(17.7)",
+          "(18.9)",
+          "(44.1)",
+          "(80.7)",
+          ""
+        ],
+        [
+          "Impairment charge -",
+          "(6.3)",
+          "(18.2)",
+          "(24.5)",
+          "",
+          ""
+        ],
+        [
+          "Closing balance",
+          "(11.7)",
+          "(17.3)",
+          "(44.2)",
+          "(73.2)",
+          ""
+        ],
+        [
+          "Stage",
+          "1",
+          "2",
+          "3",
+          "",
+          ""
+        ],
+        [
+          "Gross trade receivables",
+          "185.6",
+          "47.3",
+          "54.0",
+          "286.9",
+          ""
+        ],
+        [
+          "opening balance",
+          "(17.2)",
+          "(37.2)",
+          "(45.7)",
+          "(100.1)",
+          ""
+        ],
+        [
+          "Impairment (charge)/release",
+          "(6.9)",
+          "5.0",
+          "(19.9)",
+          "(21.8)",
+          ""
+        ],
+        [
+          "Closing balance",
+          "(17.7)",
+          "(18.9)",
+          "(44.1)",
+          "(80.7)",
+          ""
+        ],
+        [
+          "Impairment charge impacting on provision",
+          "(24.5)",
+          "(21.8)",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Impairment charge",
+          "(22.1)",
+          "(20.6)",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "source_url": "https://frasers-cms.netlify.app/assets/files/financials/fg-annual-report-2025-web.pdf",
+      "location": "page-185"
+    },
+    "notes": [],
+    "source_documents": [
+      "https://frasers-cms.netlify.app/assets/files/financials/fg-annual-report-2025-web.pdf"
+    ]
+  }
+}
