@@ -2,6 +2,8 @@
 
 A simple tool to compare how **Next plc** and **Frasers Group** calculate credit losses under IFRS 9.
 
+*Contributed by Claude AI*
+
 ## What You Get
 
 Just run the tool and you'll get a comparison report showing:
