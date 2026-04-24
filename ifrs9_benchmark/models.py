@@ -44,6 +44,25 @@ class SourceDocument:
 
 
 @dataclass(slots=True)
+class AgeingBucket:
+    """Represents a single delinquency bucket from the ageing table."""
+    bucket_name: str  # e.g., "Not past due", "0-60 days", "60-120 days", "120+ days"
+    gross_amount: float | None = None
+    allowance_amount: float | None = None
+    coverage_ratio: float | None = None
+
+
+@dataclass(slots=True)
+class StageMovement:
+    """Represents impairment movement for a single stage."""
+    stage: str  # "Stage 1", "Stage 2", "Stage 3"
+    opening: float | None = None
+    charge: float | None = None
+    write_offs: float | None = None
+    closing: float | None = None
+
+
+@dataclass(slots=True)
 class CompanyBenchmark:
     company: str
     report_url: str
@@ -59,6 +78,9 @@ class CompanyBenchmark:
     staging_table: TableData | None = None
     ageing_table: TableData | None = None
     impairment_movement_table: TableData | None = None
+    # Structured extracted data from tables
+    ageing_buckets: list[AgeingBucket] = field(default_factory=list)
+    stage_movements: list[StageMovement] = field(default_factory=list)
     notes: list[str] = field(default_factory=list)
     source_documents: list[str] = field(default_factory=list)
 

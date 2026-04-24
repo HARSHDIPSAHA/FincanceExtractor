@@ -4,7 +4,15 @@ import re
 from collections import defaultdict
 
 from .fetch import HttpClient, extract_pdf_links
-from .models import CompanyBenchmark, Evidence, ExtractedField, SourceDocument, TableData
+from .models import (
+    AgeingBucket,
+    CompanyBenchmark,
+    Evidence,
+    ExtractedField,
+    SourceDocument,
+    StageMovement,
+    TableData,
+)
 from .parse import load_document, report_period_from_url
 from .utils import (
     best_sentences,
@@ -240,28 +248,56 @@ def _extract_scenario_design(text: str, source_url: str) -> ExtractedField:
                     normalized = "Extreme"
                 scenario_names.add(normalized)
 
-    joined_evidence = " ".join(evidence).lower()
-    scenario_weight_patterns = {
-        "Base": [r"base(?:\s+case)?[^%]{0,80}(\d{1,3}(?:\.\d+)?)\s*%"],
-        "Upside": [r"upside[^%]{0,80}(\d{1,3}(?:\.\d+)?)\s*%"],
-        "Downside": [r"downside[^%]{0,80}(\d{1,3}(?:\.\d+)?)\s*%"],
-        "Extreme": [
-            r"extreme[^%]{0,80}(\d{1,3}(?:\.\d+)?)\s*%",
-            r"severe(?:[-\s]case|[-\s]downside)?[^%]{0,80}(\d{1,3}(?:\.\d+)?)\s*%",
-        ],
-    }
-    ordered_weights: list[str] = []
-    for scenario_name in ["Base", "Upside", "Downside", "Extreme"]:
-        patterns = scenario_weight_patterns.get(scenario_name, [])
-        for pattern in patterns:
-            match = re.search(pattern, joined_evidence)
-            if match:
-                ordered_weights.append(match.group(1))
+    weight_map: dict[str, str] = {}
+    scenario_pattern = re.compile(r"base(?:\s+case)?|upside|downside|severe(?:[-\s]case|[-\s]downside)?|extreme", re.IGNORECASE)
+    for sentence in evidence:
+        sentence_low = sentence.lower()
+        explicit_patterns = {
+            "Base": [
+                r"(\d{1,3}(?:\.\d+)?)\s*%\s+weighting\s+is\s+applied\s+to\s+the\s+base",
+                r"base(?:\s+case)?.{0,120}?\bto\s+(\d{1,3}(?:\.\d+)?)\s*%",
+            ],
+            "Upside": [
+                r"(\d{1,3}(?:\.\d+)?)\s*%\s+to\s+the\s+upside",
+                r"upside.{0,120}?\bto\s+(\d{1,3}(?:\.\d+)?)\s*%",
+            ],
+            "Downside": [
+                r"(\d{1,3}(?:\.\d+)?)\s*%\s+to\s+the\s+downside",
+                r"downside.{0,120}?(?:\bto|\bremaining at)\s+(\d{1,3}(?:\.\d+)?)\s*%",
+            ],
+            "Extreme": [
+                r"(\d{1,3}(?:\.\d+)?)\s*%\s+to\s+the\s+extreme",
+                r"(?:extreme|severe(?:[-\s]case|[-\s]downside)?).{0,120}?\bto\s+(\d{1,3}(?:\.\d+)?)\s*%",
+                r"(?:extreme|severe(?:[-\s]case|[-\s]downside)?).{0,120}?\bat\s+(\d{1,3}(?:\.\d+)?)\s*%",
+            ],
+        }
+        for scenario_name, patterns in explicit_patterns.items():
+            for pattern in patterns:
+                match = re.search(pattern, sentence_low)
+                if match:
+                    weight_map.setdefault(scenario_name, match.group(1))
+                    break
+
+        scenario_order: list[str] = []
+        for match in scenario_pattern.finditer(sentence_low):
+            token = match.group(0)
+            if token.startswith("base"):
+                normalized = "Base"
+            elif token.startswith("upside"):
+                normalized = "Upside"
+            elif token.startswith("downside"):
+                normalized = "Downside"
+            else:
+                normalized = "Extreme"
+            if normalized not in scenario_order:
+                scenario_order.append(normalized)
+        percentages = re.findall(r"(?<!\d)(\d{1,3}(?:\.\d+)?)\s*%", sentence)
+        if len(scenario_order) < 2 or len(percentages) < 2:
+            continue
+        for idx, scenario_name in enumerate(scenario_order):
+            if idx >= len(percentages):
                 break
-    if ordered_weights:
-        weights = ordered_weights
-    else:
-        weights = re.findall(r"(?<!\d)(\d{1,3}(?:\.\d+)?)\s*%", " ".join(evidence))
+            weight_map.setdefault(scenario_name, percentages[idx])
     value_parts = []
     if scenario_names:
         preferred_order = ["Base", "Upside", "Downside", "Extreme", "Central", "Optimistic", "Pessimistic"]
@@ -269,6 +305,9 @@ def _extract_scenario_design(text: str, source_url: str) -> ExtractedField:
         extras = sorted(scenario_names - set(ordered))
         ordered.extend(extras)
         value_parts.append(f"{len(ordered)} scenarios: {', '.join(ordered)}")
+    weights = [weight_map[name] for name in ordered if name in weight_map] if scenario_names else []
+    if not weights:
+        weights = re.findall(r"(?<!\d)(\d{1,3}(?:\.\d+)?)\s*%", " ".join(evidence))
     if weights:
         value_parts.append(f"weights: {'/'.join(weights)}")
     value = "; ".join(value_parts) if value_parts else None
@@ -320,11 +359,175 @@ def _extract_staging_table(tables: list[TableData]) -> TableData | None:
 
 
 def _extract_ageing_table(tables: list[TableData]) -> TableData | None:
-    return _pick_best_table(tables, ["past due", "not past due", "0-60", "60-120", "120+"])
+    return _pick_best_table(tables, ["past due", "not past due", "0-60", "60-120", "120+", "dpd", "ageing", "delinquency"])
+
+
+def _parse_ageing_buckets(table: TableData | None) -> list[AgeingBucket]:
+    """Parse ageing table into structured bucket data."""
+    if not table:
+        return []
+
+    buckets: list[AgeingBucket] = []
+    bucket_patterns = {
+        "not past due": [r"(?:not|never)\s*(?:past\s*due|overdue|dpd)", r"^not\s+past\s+due$"],
+        "0-60 days": [r"0?\s*[-–/]\s*60", r"up to 60", r"within 60", r"1?\s*[-–/]\s*60"],
+        "60-120 days": [r"60\s*[-–/]\s*120", r"60\s*[-–/]\s*90", r"two to four months"],
+        "120+ days": [r"120\s*\+", r"120\s*plus", r"over 120", r"90\s*\+", r"three months\+", r"default"],
+        "90-120 days": [r"90\s*[-–/]\s*120", r"90\s*[-–/]\s*119"],
+        "30-60 days": [r"30\s*[-–/]\s*60", r"30\s*[-–/]\s*59", r"one to two months"],
+        "60-90 days": [r"60\s*[-–/]\s*90", r"60\s*[-–/]\s*89", r"two to three months"],
+        "0-30 days": [r"0?\s*[-–/]\s*30", r"up to 30", r"within 30", r"less than 30"],
+    }
+
+    seen_buckets: set[str] = set()
+
+    for row in table.rows:
+        if not row:
+            continue
+        label = row[0].lower()
+
+        # Skip non-ageing rows
+        if "stage" in label or "opening" in label or "closing" in label or "charge" in label or "impairment" in label:
+            continue
+        if "gross trade" in label or "allowance for" in label:
+            continue
+
+        matched_bucket = None
+        for bucket_name, patterns in bucket_patterns.items():
+            if bucket_name in seen_buckets:
+                continue
+            for pattern in patterns:
+                if re.search(pattern, label, re.IGNORECASE):
+                    matched_bucket = bucket_name
+                    break
+            if matched_bucket:
+                break
+
+        if not matched_bucket:
+            continue
+
+        gross = None
+        allowance = None
+        for cell in row[1:]:
+            val = parse_number(cell)
+            if val is not None:
+                if val < 0:
+                    if allowance is None:
+                        allowance = val
+                elif gross is None:
+                    gross = val
+
+        coverage = safe_ratio(abs(allowance) if allowance else None, abs(gross) if gross else None)
+        buckets.append(AgeingBucket(
+            bucket_name=matched_bucket.title(),
+            gross_amount=gross,
+            allowance_amount=allowance,
+            coverage_ratio=coverage,
+        ))
+        seen_buckets.add(matched_bucket)
+
+    return buckets
 
 
 def _extract_impairment_movement_table(tables: list[TableData]) -> TableData | None:
-    return _pick_best_table(tables, ["opening", "charge", "write-off", "closing", "stage"])
+    return _pick_best_table(tables, ["opening", "charge", "write-off", "closing", "stage", "impairment", "movement"])
+
+
+def _parse_stage_movements(table: TableData | None) -> list[StageMovement]:
+    """Parse impairment movement table into structured stage-level data."""
+    if not table:
+        return []
+
+    movements: dict[str, StageMovement] = {}
+    stage_pattern = re.compile(r"stage\s*([123])", re.IGNORECASE)
+
+    # Detect column-based stage layout (like Frasers)
+    lower_columns = [c.lower() for c in table.columns]
+    stage_col_indices: dict[int, str] = {}
+    for idx, col in enumerate(lower_columns):
+        match = stage_pattern.search(col)
+        if match:
+            stage_col_indices[idx] = f"Stage {match.group(1)}"
+
+    row_types = {
+        "opening": ["opening", "balance at start", "brought forward", "opening balance"],
+        "charge": ["charge", "impairment charge", "provision charge", "new provisions", "additional"],
+        "write_offs": ["write-off", "write off", "utilised", "utilized", "used", "released"],
+        "closing": ["closing", "balance at end", "carried forward", "closing balance"],
+    }
+
+    # Column-based stage layout
+    if stage_col_indices:
+        for row in table.rows:
+            if not row:
+                continue
+            label = row[0].lower()
+
+            row_type = None
+            for rt, keywords in row_types.items():
+                if any(kw in label for kw in keywords):
+                    row_type = rt
+                    break
+
+            if not row_type:
+                continue
+
+            for col_idx, stage_key in stage_col_indices.items():
+                if col_idx >= len(row):
+                    continue
+                if stage_key not in movements:
+                    movements[stage_key] = StageMovement(stage=stage_key)
+
+                val = parse_number(row[col_idx])
+                if val is None:
+                    continue
+                if row_type == "opening":
+                    movements[stage_key].opening = val
+                elif row_type == "charge":
+                    movements[stage_key].charge = val
+                elif row_type == "write_offs":
+                    movements[stage_key].write_offs = val
+                elif row_type == "closing":
+                    movements[stage_key].closing = val
+    else:
+        # Row-based stage layout (original logic)
+        for row in table.rows:
+            if not row:
+                continue
+            label = row[0].lower()
+
+            stage_match = stage_pattern.search(label)
+            if not stage_match:
+                continue
+            stage_num = stage_match.group(1)
+            stage_key = f"Stage {stage_num}"
+
+            if stage_key not in movements:
+                movements[stage_key] = StageMovement(stage=stage_key)
+
+            row_type = None
+            for rt, keywords in row_types.items():
+                if any(kw in label for kw in keywords):
+                    row_type = rt
+                    break
+
+            if not row_type:
+                continue
+
+            for cell in row[1:]:
+                val = parse_number(cell)
+                if val is None:
+                    continue
+                if row_type == "opening":
+                    movements[stage_key].opening = val
+                elif row_type == "charge":
+                    movements[stage_key].charge = val
+                elif row_type == "write_offs":
+                    movements[stage_key].write_offs = val
+                elif row_type == "closing":
+                    movements[stage_key].closing = val
+
+    return list(movements.values())
 
 
 def _append_stage_coverage_note(company: CompanyBenchmark) -> None:
@@ -368,6 +571,34 @@ def _append_stage_coverage_note(company: CompanyBenchmark) -> None:
         parts.append(f"{stage_name}: {ratio * 100:.1f}%")
     if parts:
         company.notes.append("Stage-level coverage ratios -> " + ", ".join(parts))
+
+
+def _extract_ageing_analysis(company: CompanyBenchmark) -> None:
+    """Extract structured ageing bucket data from the ageing table."""
+    if company.ageing_table:
+        company.ageing_buckets = _parse_ageing_buckets(company.ageing_table)
+
+        # Also try staging table if it has "Not past due" rows (Frasers style)
+        if not company.ageing_buckets and company.staging_table:
+            company.ageing_buckets = _parse_ageing_buckets(company.staging_table)
+
+        if company.ageing_buckets:
+            total_gross = sum(b.gross_amount or 0 for b in company.ageing_buckets)
+            if total_gross > 0:
+                bucket_120_plus = next((b for b in company.ageing_buckets if "120" in b.bucket_name or "90" in b.bucket_name), None)
+                if bucket_120_plus and bucket_120_plus.gross_amount:
+                    pct = (bucket_120_plus.gross_amount / total_gross) * 100
+                    company.notes.append(f"Ageing analysis: {pct:.1f}% of book is 120+ DPD")
+
+
+def _extract_impairment_analysis(company: CompanyBenchmark) -> None:
+    """Extract structured impairment movement data from the movement table."""
+    if company.impairment_movement_table:
+        company.stage_movements = _parse_stage_movements(company.impairment_movement_table)
+        if company.stage_movements:
+            stage3 = next((s for s in company.stage_movements if s.stage == "Stage 3"), None)
+            if stage3 and stage3.write_offs:
+                company.notes.append(f"Impairment movement: Stage 3 write-offs = {abs(stage3.write_offs):.1f}")
 
 
 def _collect_documents(client: HttpClient, report_url: str, max_pdf_pages: int) -> list[SourceDocument]:
@@ -444,6 +675,8 @@ def extract_company_benchmark(
     if benchmark.model_structure.value is None:
         benchmark.notes.append("Model structure not confidently extracted; validate manually.")
     _append_stage_coverage_note(benchmark)
+    _extract_ageing_analysis(benchmark)
+    _extract_impairment_analysis(benchmark)
     return benchmark
 
 
