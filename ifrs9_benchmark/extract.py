@@ -362,8 +362,13 @@ def _extract_ageing_table(tables: list[TableData]) -> TableData | None:
     return _pick_best_table(tables, ["past due", "not past due", "0-60", "60-120", "120+", "dpd", "ageing", "delinquency"])
 
 
-def _parse_ageing_buckets(table: TableData | None) -> list[AgeingBucket]:
-    """Parse ageing table into structured bucket data."""
+def _parse_ageing_buckets(table: TableData | None, use_columns: dict[int, str] | None = None) -> list[AgeingBucket]:
+    """Parse ageing table into structured bucket data.
+
+    Args:
+        table: The table to parse
+        use_columns: Optional dict mapping column index to stage name (for hybrid tables)
+    """
     if not table:
         return []
 
@@ -406,16 +411,41 @@ def _parse_ageing_buckets(table: TableData | None) -> list[AgeingBucket]:
         if not matched_bucket:
             continue
 
+        # For hybrid tables with column structure (like Frasers), use specific columns
         gross = None
         allowance = None
-        for cell in row[1:]:
-            val = parse_number(cell)
-            if val is not None:
-                if val < 0:
-                    if allowance is None:
-                        allowance = val
-                elif gross is None:
-                    gross = val
+
+        if use_columns:
+            # Use the first stage column for gross amount
+            for col_idx in sorted(use_columns.keys()):
+                if col_idx < len(row):
+                    val = parse_number(row[col_idx])
+                    if val is not None and val >= 0 and gross is None:
+                        gross = val
+                        break
+            # Check for allowance in the same row from a different context
+            # In Frasers table: row 1 = Not past due amounts, row 2 = Gross totals, row 3 = Allowances
+            row_idx = table.rows.index(row)
+            if row_idx > 0 and row_idx < len(table.rows):
+                # Look at "Allowance for expected credit loss" row for the same column
+                for other_row in table.rows:
+                    if other_row and "allowance for expected credit loss" in other_row[0].lower():
+                        for col_idx in sorted(use_columns.keys()):
+                            if col_idx < len(other_row):
+                                val = parse_number(other_row[col_idx])
+                                if val is not None and val < 0:
+                                    allowance = val
+                                    break
+                        break
+        else:
+            for cell in row[1:]:
+                val = parse_number(cell)
+                if val is not None:
+                    if val < 0:
+                        if allowance is None:
+                            allowance = val
+                    elif gross is None:
+                        gross = val
 
         coverage = safe_ratio(abs(allowance) if allowance else None, abs(gross) if gross else None)
         buckets.append(AgeingBucket(
@@ -434,20 +464,34 @@ def _extract_impairment_movement_table(tables: list[TableData]) -> TableData | N
 
 
 def _parse_stage_movements(table: TableData | None) -> list[StageMovement]:
-    """Parse impairment movement table into structured stage-level data."""
+    """Parse impairment movement table into structured stage-level data.
+
+    Handles two formats:
+    1. Column-based: Columns named "Stage 1", "Stage 2", etc. (standard)
+    2. Row-based: A "Stage" row with values 1, 2, 3 indicating column meanings (Frasers style)
+    """
     if not table:
         return []
 
     movements: dict[str, StageMovement] = {}
     stage_pattern = re.compile(r"stage\s*([123])", re.IGNORECASE)
 
-    # Detect column-based stage layout (like Frasers)
+    # Detect column-based stage layout from column headers
     lower_columns = [c.lower() for c in table.columns]
     stage_col_indices: dict[int, str] = {}
     for idx, col in enumerate(lower_columns):
         match = stage_pattern.search(col)
         if match:
             stage_col_indices[idx] = f"Stage {match.group(1)}"
+
+    # If no column headers, look for "Stage" row (Frasers hybrid format)
+    if not stage_col_indices:
+        for row in table.rows:
+            if row and row[0].lower().strip() == "stage":
+                for idx, cell in enumerate(row[1:], start=1):
+                    if cell.strip() in ("1", "2", "3"):
+                        stage_col_indices[idx] = f"Stage {cell.strip()}"
+                break
 
     row_types = {
         "opening": ["opening", "balance at start", "brought forward", "opening balance"],
@@ -456,7 +500,7 @@ def _parse_stage_movements(table: TableData | None) -> list[StageMovement]:
         "closing": ["closing", "balance at end", "carried forward", "closing balance"],
     }
 
-    # Column-based stage layout
+    # Stage-indexed layout (columns represent stages)
     if stage_col_indices:
         for row in table.rows:
             if not row:
@@ -482,15 +526,19 @@ def _parse_stage_movements(table: TableData | None) -> list[StageMovement]:
                 if val is None:
                     continue
                 if row_type == "opening":
-                    movements[stage_key].opening = val
+                    if movements[stage_key].opening is None:
+                        movements[stage_key].opening = val
                 elif row_type == "charge":
-                    movements[stage_key].charge = val
+                    if movements[stage_key].charge is None:
+                        movements[stage_key].charge = val
                 elif row_type == "write_offs":
-                    movements[stage_key].write_offs = val
+                    if movements[stage_key].write_offs is None:
+                        movements[stage_key].write_offs = val
                 elif row_type == "closing":
-                    movements[stage_key].closing = val
+                    if movements[stage_key].closing is None:
+                        movements[stage_key].closing = val
     else:
-        # Row-based stage layout (original logic)
+        # Row-based stage layout (each row is a stage)
         for row in table.rows:
             if not row:
                 continue
@@ -573,22 +621,50 @@ def _append_stage_coverage_note(company: CompanyBenchmark) -> None:
         company.notes.append("Stage-level coverage ratios -> " + ", ".join(parts))
 
 
+def _detect_stage_columns(table: TableData) -> dict[int, str]:
+    """Detect which columns represent stages, from either headers or a 'Stage' row."""
+    stage_pattern = re.compile(r"stage\s*([123])", re.IGNORECASE)
+    stage_col_indices: dict[int, str] = {}
+
+    # Try column headers first
+    lower_columns = [c.lower() for c in table.columns]
+    for idx, col in enumerate(lower_columns):
+        match = stage_pattern.search(col)
+        if match:
+            stage_col_indices[idx] = f"Stage {match.group(1)}"
+
+    # If no headers, look for "Stage" row (Frasers hybrid format)
+    if not stage_col_indices:
+        for row in table.rows:
+            if row and row[0].lower().strip() == "stage":
+                for idx, cell in enumerate(row[1:], start=1):
+                    if cell.strip() in ("1", "2", "3"):
+                        stage_col_indices[idx] = f"Stage {cell.strip()}"
+                break
+
+    return stage_col_indices
+
+
 def _extract_ageing_analysis(company: CompanyBenchmark) -> None:
     """Extract structured ageing bucket data from the ageing table."""
+    stage_columns: dict[int, str] = {}
+    if company.staging_table:
+        stage_columns = _detect_stage_columns(company.staging_table)
+
     if company.ageing_table:
         company.ageing_buckets = _parse_ageing_buckets(company.ageing_table)
 
-        # Also try staging table if it has "Not past due" rows (Frasers style)
-        if not company.ageing_buckets and company.staging_table:
-            company.ageing_buckets = _parse_ageing_buckets(company.staging_table)
+    # Also try staging table if it has "Not past due" rows (Frasers style hybrid table)
+    if not company.ageing_buckets and company.staging_table:
+        company.ageing_buckets = _parse_ageing_buckets(company.staging_table, stage_columns if stage_columns else None)
 
-        if company.ageing_buckets:
-            total_gross = sum(b.gross_amount or 0 for b in company.ageing_buckets)
-            if total_gross > 0:
-                bucket_120_plus = next((b for b in company.ageing_buckets if "120" in b.bucket_name or "90" in b.bucket_name), None)
-                if bucket_120_plus and bucket_120_plus.gross_amount:
-                    pct = (bucket_120_plus.gross_amount / total_gross) * 100
-                    company.notes.append(f"Ageing analysis: {pct:.1f}% of book is 120+ DPD")
+    if company.ageing_buckets:
+        total_gross = sum(b.gross_amount or 0 for b in company.ageing_buckets)
+        if total_gross > 0:
+            bucket_120_plus = next((b for b in company.ageing_buckets if "120" in b.bucket_name or "90" in b.bucket_name), None)
+            if bucket_120_plus and bucket_120_plus.gross_amount:
+                pct = (bucket_120_plus.gross_amount / total_gross) * 100
+                company.notes.append(f"Ageing analysis: {pct:.1f}% of book is 120+ DPD")
 
 
 def _extract_impairment_analysis(company: CompanyBenchmark) -> None:
