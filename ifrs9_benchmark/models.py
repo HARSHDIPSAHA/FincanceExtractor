@@ -27,6 +27,14 @@ class TableData:
 
 
 @dataclass(slots=True)
+class PageData:
+    page_number: int
+    text: str
+    source_url: str
+    tables: list[TableData] = field(default_factory=list)
+
+
+@dataclass(slots=True)
 class FilingLink:
     slug: str
     kind: str
@@ -40,6 +48,7 @@ class SourceDocument:
     url: str
     document_type: str
     text: str
+    pages: list[PageData] = field(default_factory=list)
     tables: list[TableData] = field(default_factory=list)
 
 
@@ -74,6 +83,10 @@ class CompanyBenchmark:
     ecl_allowance: float | None = None
     coverage_ratio: float | None = None
     coverage_ratio_method: str | None = None
+    exposure_unit: str | None = None
+    ecl_unit: str | None = None
+    metric_basis: str | None = None
+    company_type: str | None = None
     core_ecl_table: TableData | None = None
     staging_table: TableData | None = None
     ageing_table: TableData | None = None

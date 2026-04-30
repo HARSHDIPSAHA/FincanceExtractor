@@ -2,7 +2,8 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
-from urllib.parse import urljoin
+from pathlib import Path
+from urllib.parse import unquote, urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -22,7 +23,21 @@ PDF_RE = re.compile(r"https?://[^\s\"'>]+\.pdf(?:\?[^\s\"'>]+)?", re.IGNORECASE)
 class HttpClient:
     timeout: int = 45
 
+    def _local_path(self, url: str) -> Path | None:
+        parsed = urlparse(url)
+        if parsed.scheme == "file":
+            return Path(unquote(parsed.path.lstrip("/")))
+        if parsed.scheme:
+            return None
+        candidate = Path(url)
+        if candidate.exists():
+            return candidate
+        return None
+
     def get_text(self, url: str) -> str:
+        local_path = self._local_path(url)
+        if local_path is not None:
+            return local_path.read_text(encoding="utf-8")
         headers = {
             "User-Agent": (
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -34,6 +49,9 @@ class HttpClient:
         return response.text
 
     def get_bytes(self, url: str) -> bytes:
+        local_path = self._local_path(url)
+        if local_path is not None:
+            return local_path.read_bytes()
         headers = {
             "User-Agent": (
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "

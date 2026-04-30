@@ -1,107 +1,90 @@
 {
   "barclays_uk": {
     "company": "Barclays UK",
-    "report_url": "Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
+    "report_url": "https://home.barclays/content/dam/home-barclays/documents/investor-relations/reports-and-events/annual-reports/2025/Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
     "report_period": "2025",
     "model_structure": {
       "value": "3-stage IFRS 9 model; Segmentation logic disclosed",
       "evidence": [
         {
           "text": "Stage 1 Stage 2 Stage 3 excl.",
-          "source_url": "Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
-          "location": "page-108"
+          "source_url": "https://home.barclays/content/dam/home-barclays/documents/investor-relations/reports-and-events/annual-reports/2025/Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
+          "location": null
         },
         {
-          "text": "Transfers from Stage 1 to Stage 2 (8,658) (3) 8,658 3 \u2014 \u2014 \u2014 \u2014 \u2014 \u2014",
-          "source_url": "Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
-          "location": "page-108"
-        },
-        {
-          "text": "Stage 1 Stage 2 Stage 3 excl.",
-          "source_url": "Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
-          "location": "page-111"
+          "text": "Stage 1 Stage 2 Stage 3 excluding Stage 3 POCI Total",
+          "source_url": "https://home.barclays/content/dam/home-barclays/documents/investor-relations/reports-and-events/annual-reports/2025/Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
+          "location": null
         }
       ]
     },
     "scenario_design": {
-      "value": "4 scenarios: Base, Upside, Downside, Extreme",
+      "value": "2 scenarios: Base, Downside",
       "evidence": [
         {
-          "text": "1 Model exposures are allocated to a stage based on an individual scenario rather than a probability-weighted approach, as required for Barclays",
-          "source_url": "Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
-          "location": "page-130"
+          "text": "In 2025, Barclays conducted an internal macroeconomic stress test under a severe \u2018Global Fragmentation\u2019 scenario,",
+          "source_url": "https://home.barclays/content/dam/home-barclays/documents/investor-relations/reports-and-events/annual-reports/2025/Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
+          "location": null
         },
         {
-          "text": "As a result, it is not possible to back solve the final reported weighted ECL from individual scenarios given balances",
-          "source_url": "Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
-          "location": "page-130"
+          "text": "adequacy and resilience under severe but plausible macroeconomic scenarios",
+          "source_url": "https://home.barclays/content/dam/home-barclays/documents/investor-relations/reports-and-events/annual-reports/2025/Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
+          "location": null
         },
         {
-          "text": "adverse scenarios (Downside 1 and Downside 2) and two favourable scenarios (Upside 1 and Upside 2) are derived, with",
-          "source_url": "Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
-          "location": "page-124"
+          "text": "macroeconomic stress test under a severe \u2018Global Fragmentation\u2019 scenario, reflecting heightened US protectionism,",
+          "source_url": "https://home.barclays/content/dam/home-barclays/documents/investor-relations/reports-and-events/annual-reports/2025/Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
+          "location": null
         },
         {
-          "text": "bringing the Baseline scenario closer to the Upside scenarios; and (ii) model improvements, which increase the Baseline weight",
-          "source_url": "Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
-          "location": "page-124"
+          "text": "For Q425, macroeconomic scenarios have been refreshed and are",
+          "source_url": "https://home.barclays/content/dam/home-barclays/documents/investor-relations/reports-and-events/annual-reports/2025/Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
+          "location": null
         }
       ]
     },
     "key_parameters": {
-      "value": "PD disclosed; LGD disclosed; EAD disclosed; Forward-looking variables disclosed",
+      "value": "PD disclosed; EAD disclosed; Forward-looking variables disclosed",
       "evidence": [
         {
-          "text": "loss given default (LGD), a range of unbiased future economic scenarios, estimation of expected lives, estimation of exposures",
-          "source_url": "Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
-          "location": "page-124"
+          "text": "Stage 2 exposures are predominantly identified using quantitative tests where the lifetime probability of default (PD) has",
+          "source_url": "https://home.barclays/content/dam/home-barclays/documents/investor-relations/reports-and-events/annual-reports/2025/Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
+          "location": null
         },
         {
-          "text": "The measurement of modelled ECL involves complexity and judgement, including estimation of probabilities of default (PD),",
-          "source_url": "Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
-          "location": "page-124"
+          "text": "In response we have further improved the app to ensure every new or updated customer experience feels better.",
+          "source_url": "https://home.barclays/content/dam/home-barclays/documents/investor-relations/reports-and-events/annual-reports/2025/Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
+          "location": null
         },
         {
-          "text": "LGD spreads of physical and transition risk due to climate change for the UK Mortgages portfolio (both PD and LGD).",
-          "source_url": "Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
-          "location": "page-123"
+          "text": "Barclays Bank UK PLC contains the Barclays ring-fenced UK retail banking division, a nd is one of the UK\u2019s leading financial",
+          "source_url": "https://home.barclays/content/dam/home-barclays/documents/investor-relations/reports-and-events/annual-reports/2025/Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
+          "location": null
         },
         {
-          "text": "Scenario Approach: The IFRS 9 Downside 2 scenario has been updated and aligned to the 2025 Internal Stress Test",
-          "source_url": "Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
-          "location": "page-123"
+          "text": "Consumer UK, Business Banking and Head Office.",
+          "source_url": "https://home.barclays/content/dam/home-barclays/documents/investor-relations/reports-and-events/annual-reports/2025/Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
+          "location": null
+        },
+        {
+          "text": "\u25aa Consumer affordability : higher inflation and higher interest rates could increase the cost of living and negatively impact",
+          "source_url": "https://home.barclays/content/dam/home-barclays/documents/investor-relations/reports-and-events/annual-reports/2025/Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
+          "location": null
+        },
+        {
+          "text": "inflation.",
+          "source_url": "https://home.barclays/content/dam/home-barclays/documents/investor-relations/reports-and-events/annual-reports/2025/Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
+          "location": null
         }
       ]
     },
-    "gross_exposure": 172415.0,
-    "ecl_allowance": -1645.0,
-    "coverage_ratio": 0.009540933213467506,
-    "coverage_ratio_method": "derived",
-    "exposure_unit": "GBP m",
-    "ecl_unit": "GBP m",
-    "metric_basis": "Gross loans and advances vs Total ECL (cross-page)",
-    "company_type": "Retail bank",
-    "core_ecl_table": {
-      "title": "Cross-page core metrics",
-      "columns": [
-        "Metric",
-        "Value"
-      ],
-      "rows": [
-        [
-          "Gross loans and advances",
-          "172415.0"
-        ],
-        [
-          "Total ECL",
-          "(1645.0)"
-        ]
-      ],
-      "source_url": "Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
-      "location": "page-154 / page-130"
-    },
+    "gross_exposure": 106.0,
+    "ecl_allowance": 106.0,
+    "coverage_ratio": 0.043,
+    "coverage_ratio_method": "disclosed",
+    "core_ecl_table": null,
     "staging_table": {
-      "title": "PDF extracted table page 154.1",
+      "title": "PDF extracted table page 6.3",
       "columns": [
         "Row",
         "Value 1",
@@ -111,43 +94,37 @@
       "rows": [
         [
           "As at",
-          "31 December 2025",
+          "31 December",
           "2025",
           "2024"
         ],
         [
-          "Gross loans and advances (\u00a3m)",
-          "172,415",
-          "163,197",
-          ""
-        ],
-        [
-          ">90 day arrears, excluding recovery book (%)",
-          "0.1",
-          "0.2",
-          ""
-        ],
-        [
-          "Annualised gross charge-off rates (%)",
-          "0.5",
-          "0.5",
-          ""
-        ],
-        [
-          "Recovery book proportion of outstanding balances (%)",
-          "0.6",
-          "0.6",
-          ""
-        ],
-        [
-          "Recovery book impairment coverage ratio (%)",
+          "Common equity tier (CET1) ratio",
           "1",
-          "4.3",
-          "3.7"
+          "14.5%",
+          "14.2%"
+        ],
+        [
+          "UK leverage ratio",
+          "5.2%",
+          "5.3%",
+          ""
+        ],
+        [
+          "Liquidity coverage ratio",
+          "2",
+          "187%",
+          "202%"
+        ],
+        [
+          "Net stable funding ratio",
+          "3",
+          "152%",
+          "159%"
         ]
       ],
-      "source_url": "Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
-      "location": "page-154"
+      "source_url": "https://home.barclays/content/dam/home-barclays/documents/investor-relations/reports-and-events/annual-reports/2025/Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
+      "location": "page-6"
     },
     "ageing_table": null,
     "impairment_movement_table": {
@@ -244,40 +221,32 @@
           ""
         ]
       ],
-      "source_url": "Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
+      "source_url": "https://home.barclays/content/dam/home-barclays/documents/investor-relations/reports-and-events/annual-reports/2025/Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
       "location": "page-109"
     },
     "ageing_buckets": [],
     "stage_movements": [],
-    "notes": [
-      "Metric basis: Gross loans and advances vs Total ECL (cross-page).",
-      "Company type inferred as Retail bank."
-    ],
+    "notes": [],
     "source_documents": [
-      "Barclays-Bank-UK-PLC-Annual-Report-2025.pdf"
+      "https://home.barclays/content/dam/home-barclays/documents/investor-relations/reports-and-events/annual-reports/2025/Barclays-Bank-UK-PLC-Annual-Report-2025.pdf"
     ]
   },
   "santander_uk": {
     "company": "Santander UK",
-    "report_url": "SantanderUKplc2025AnnualReport.pdf",
-    "report_period": "2025",
+    "report_url": "https://www.santander.co.uk/assets/s3fs-public/documents/SantanderUKplc2025AnnualReport.pdf",
+    "report_period": null,
     "model_structure": {
       "value": "3-stage IFRS 9 model; Segmentation logic disclosed",
       "evidence": [
         {
-          "text": "\u2013Stage 1 11.0 31.0 77.9 41.0 12.4 2.9 0.7 6.8 (0.1) 183.6",
-          "source_url": "SantanderUKplc2025AnnualReport.pdf",
-          "location": "page-67"
+          "text": "We transfer Stage 3 exposures to Stage 2 or Stage 1 when we no longer consider them to be credit impaired.",
+          "source_url": "https://www.santander.co.uk/assets/s3fs-public/documents/SantanderUKplc2025AnnualReport.pdf",
+          "location": null
         },
         {
-          "text": "\u2013Stage 2 0.2 0.6 3.0 5.1 3.0 3.3 2.1 0.1 (0.3) 17.1",
-          "source_url": "SantanderUKplc2025AnnualReport.pdf",
-          "location": "page-67"
-        },
-        {
-          "text": "Stage 2 186 184 186 41 261 858 6",
-          "source_url": "SantanderUKplc2025AnnualReport.pdf",
-          "location": "page-80"
+          "text": "Total Stage 1 Stage 2 Stage 3 offs Allowances",
+          "source_url": "https://www.santander.co.uk/assets/s3fs-public/documents/SantanderUKplc2025AnnualReport.pdf",
+          "location": null
         }
       ]
     },
@@ -285,24 +254,24 @@
       "value": "4 scenarios: Base, Upside, Downside, Central",
       "evidence": [
         {
+          "text": "Economic scenarios 1 Upside Base case Downside 1 Downside 2 Weighted",
+          "source_url": "https://www.santander.co.uk/assets/s3fs-public/documents/SantanderUKplc2025AnnualReport.pdf",
+          "location": null
+        },
+        {
           "text": "Our scenarios consist of a central base case, one upside scenario and two downside scenarios.",
-          "source_url": "SantanderUKplc2025AnnualReport.pdf",
-          "location": "page-53"
+          "source_url": "https://www.santander.co.uk/assets/s3fs-public/documents/SantanderUKplc2025AnnualReport.pdf",
+          "location": null
         },
         {
           "text": "Our use of four different scenarios is designed to reflect different possible outcomes to the base case, highlighting the upside and downside risks associated with",
-          "source_url": "SantanderUKplc2025AnnualReport.pdf",
-          "location": "page-53"
+          "source_url": "https://www.santander.co.uk/assets/s3fs-public/documents/SantanderUKplc2025AnnualReport.pdf",
+          "location": null
         },
         {
-          "text": "We review the scenarios and associated weights every quarter to ensure they appropriately reflect the current economic circumstances and UK Government policy",
-          "source_url": "SantanderUKplc2025AnnualReport.pdf",
-          "location": "page-54"
-        },
-        {
-          "text": "Based on this revised base case, we reviewed our suite of scenarios to ensure that they capture the wide range of potential outcomes for the UK economy.",
-          "source_url": "SantanderUKplc2025AnnualReport.pdf",
-          "location": "page-54"
+          "text": "Upside Base case Downside 1 Downside 2 Weighted",
+          "source_url": "https://www.santander.co.uk/assets/s3fs-public/documents/SantanderUKplc2025AnnualReport.pdf",
+          "location": null
         }
       ]
     },
@@ -310,588 +279,42 @@
       "value": "PD disclosed; LGD disclosed; EAD disclosed; Forward-looking variables disclosed",
       "evidence": [
         {
-          "text": "consistent with the prior period, although updated economic forecasts project slightly larger fluctuations.",
-          "source_url": "SantanderUKplc2025AnnualReport.pdf",
-          "location": "page-63"
+          "text": "We monitor these risks via our Risk Radar and regularly provide a combined bi-annual update, alongside Top Risks to ERCC and BRC .",
+          "source_url": "https://www.santander.co.uk/assets/s3fs-public/documents/SantanderUKplc2025AnnualReport.pdf",
+          "location": null
         },
         {
-          "text": "Probability of default The likelihood of a borrower defaulting in the following quarter, assuming it has not closed or defaulted since the reporting date.",
-          "source_url": "SantanderUKplc2025AnnualReport.pdf",
-          "location": "page-63"
+          "text": "The Santander UK group has updated its range of scenarios which has resulted in an additional estimated charge of \u00a3183m, increasing the total provision to \u00a3461m.",
+          "source_url": "https://www.santander.co.uk/assets/s3fs-public/documents/SantanderUKplc2025AnnualReport.pdf",
+          "location": null
         },
         {
-          "text": "It is the product of the probability of default, exposure at default",
-          "source_url": "SantanderUKplc2025AnnualReport.pdf",
-          "location": "page-53"
+          "text": "rates used in the Loss Given Default (LGD) models for residential mortgages and the CCB residential mortgages)",
+          "source_url": "https://www.santander.co.uk/assets/s3fs-public/documents/SantanderUKplc2025AnnualReport.pdf",
+          "location": null
         },
         {
           "text": "(unaudited) and loss given default, and we include direct and indirect costs.",
-          "source_url": "SantanderUKplc2025AnnualReport.pdf",
-          "location": "page-53"
+          "source_url": "https://www.santander.co.uk/assets/s3fs-public/documents/SantanderUKplc2025AnnualReport.pdf",
+          "location": null
+        },
+        {
+          "text": "Important information for readers",
+          "source_url": "https://www.santander.co.uk/assets/s3fs-public/documents/SantanderUKplc2025AnnualReport.pdf",
+          "location": null
+        },
+        {
+          "text": "We live our values of Simple , Personal and Fair through great behaviours and our people leaders.",
+          "source_url": "https://www.santander.co.uk/assets/s3fs-public/documents/SantanderUKplc2025AnnualReport.pdf",
+          "location": null
         }
       ]
     },
-    "gross_exposure": 293493.0,
-    "ecl_allowance": -812.0,
-    "coverage_ratio": 0.0027666758662046455,
-    "coverage_ratio_method": "derived",
-    "exposure_unit": "GBP m",
-    "ecl_unit": "GBP m",
-    "metric_basis": "Closing on-balance-sheet ECL exposure",
-    "company_type": "Retail + commercial bank",
-    "core_ecl_table": {
-      "title": "PDF extracted table page 75.1",
-      "columns": [
-        "Row",
-        "Value 1",
-        "Value 2",
-        "Value 3",
-        "Value 4",
-        "Value 5",
-        "Value 6",
-        "Value 7",
-        "Value 8",
-        "Value 9",
-        "Value 10",
-        "Value 11"
-      ],
-      "rows": [
-        [
-          "Exposures",
-          "1",
-          "ECL",
-          "Exposures",
-          "1",
-          "ECL",
-          "Exposures",
-          "1",
-          "ECL",
-          "Exposures",
-          "1",
-          "ECL"
-        ],
-        [
-          "At 1 January 2025",
-          "259,883",
-          "153",
-          "21,218",
-          "359",
-          "2,759",
-          "357",
-          "283,860",
-          "869",
-          "",
-          "",
-          ""
-        ],
-        [
-          "Transfers from Stage 1 to Stage 2",
-          "2",
-          "(7,088)",
-          "(10)",
-          "7,088",
-          "10",
-          "\u2014",
-          "\u2014",
-          "\u2014",
-          "\u2014",
-          "",
-          ""
-        ],
-        [
-          "Transfers from Stage 2 to Stage 1",
-          "2",
-          "6,231",
-          "78",
-          "(6,231)",
-          "(78)",
-          "\u2014",
-          "\u2014",
-          "\u2014",
-          "\u2014",
-          "",
-          ""
-        ],
-        [
-          "Transfers to Stage 3",
-          "2",
-          "(239)",
-          "(1)",
-          "(852)",
-          "(31)",
-          "1,091",
-          "32",
-          "\u2014",
-          "\u2014",
-          "",
-          ""
-        ],
-        [
-          "Transfers from Stage 3",
-          "2",
-          "2",
-          "\u2014",
-          "290",
-          "17",
-          "(292)",
-          "(17)",
-          "\u2014",
-          "\u2014",
-          "",
-          ""
-        ],
-        [
-          "Transfers of financial instruments",
-          "(1,094)",
-          "67",
-          "295",
-          "(82)",
-          "799",
-          "15",
-          "\u2014",
-          "\u2014",
-          "",
-          "",
-          ""
-        ],
-        [
-          "Net ECL remeasurement on stage transfer",
-          "3",
-          "\u2014",
-          "(69)",
-          "\u2014",
-          "83",
-          "\u2014",
-          "103",
-          "\u2014",
-          "117",
-          "",
-          ""
-        ],
-        [
-          "Change in economic scenarios",
-          "4",
-          "\u2014",
-          "(10)",
-          "\u2014",
-          "7",
-          "\u2014",
-          "(5)",
-          "\u2014",
-          "(8)",
-          "",
-          ""
-        ],
-        [
-          "New lending and assets purchased",
-          "5 8",
-          "54,405",
-          "41",
-          "1,086",
-          "38",
-          "44",
-          "13",
-          "55,535",
-          "92",
-          "",
-          ""
-        ],
-        [
-          "Redemptions, repayments and assets sold",
-          "6 8",
-          "(31,104)",
-          "(29)",
-          "(4,267)",
-          "(79)",
-          "(1,042)",
-          "(61)",
-          "(36,413)",
-          "(169)",
-          "",
-          ""
-        ],
-        [
-          "Changes in risk parameters and other movements",
-          "7",
-          "(9,461)",
-          "4",
-          "192",
-          "(25)",
-          "371",
-          "180",
-          "(8,898)",
-          "159",
-          "",
-          ""
-        ],
-        [
-          "Assets written off",
-          "6",
-          "\u2014",
-          "\u2014",
-          "\u2014",
-          "\u2014",
-          "(591)",
-          "(248)",
-          "(591)",
-          "(248)",
-          "",
-          ""
-        ],
-        [
-          "At 31 December 2025",
-          "272,629",
-          "157",
-          "18,524",
-          "301",
-          "2,340",
-          "354",
-          "293,493",
-          "812",
-          "",
-          "",
-          ""
-        ],
-        [
-          "Net movement in the period",
-          "12,746",
-          "4",
-          "(2,694)",
-          "(58)",
-          "(419)",
-          "(3)",
-          "9,633",
-          "(57)",
-          "",
-          "",
-          ""
-        ],
-        [
-          "ECL charge/(release) to the Income Statement",
-          "4",
-          "(58)",
-          "245",
-          "191",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        [
-          "Less: Discount unwind",
-          "\u2014",
-          "\u2014",
-          "(21)",
-          "(21)",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        [
-          "Less: Recoveries net of collection costs",
-          "\u2014",
-          "\u2014",
-          "23",
-          "23",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        [
-          "Total ECL charge/(release) to the Income Statement",
-          "4",
-          "(58)",
-          "247",
-          "193",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        [
-          "At 1 January 2024",
-          "268,211",
-          "170",
-          "23,595",
-          "461",
-          "3,071",
-          "361",
-          "294,877",
-          "992",
-          "",
-          "",
-          ""
-        ],
-        [
-          "Transfers from Stage 1 to Stage 2",
-          "2",
-          "(11,911)",
-          "(11)",
-          "11,911",
-          "11",
-          "\u2014",
-          "\u2014",
-          "\u2014",
-          "\u2014",
-          "",
-          ""
-        ],
-        [
-          "Transfers from Stage 2 to Stage 1",
-          "2",
-          "9,395",
-          "118",
-          "(9,395)",
-          "(118)",
-          "\u2014",
-          "\u2014",
-          "\u2014",
-          "\u2014",
-          "",
-          ""
-        ],
-        [
-          "Transfers to Stage 3",
-          "2",
-          "(434)",
-          "(2)",
-          "(845)",
-          "(34)",
-          "1,279",
-          "36",
-          "\u2014",
-          "\u2014",
-          "",
-          ""
-        ],
-        [
-          "Transfers from Stage 3",
-          "2",
-          "35",
-          "2",
-          "417",
-          "34",
-          "(452)",
-          "(36)",
-          "\u2014",
-          "\u2014",
-          "",
-          ""
-        ],
-        [
-          "Transfers of financial instruments",
-          "(2,915)",
-          "107",
-          "2,088",
-          "(107)",
-          "827",
-          "\u2014",
-          "\u2014",
-          "\u2014",
-          "",
-          "",
-          ""
-        ],
-        [
-          "Net ECL remeasurement on stage transfer",
-          "3",
-          "\u2014",
-          "(107)",
-          "\u2014",
-          "96",
-          "\u2014",
-          "122",
-          "\u2014",
-          "111",
-          "",
-          ""
-        ],
-        [
-          "Change in economic scenarios",
-          "4",
-          "\u2014",
-          "(20)",
-          "\u2014",
-          "(44)",
-          "\u2014",
-          "\u2014",
-          "\u2014",
-          "(64)",
-          "",
-          ""
-        ],
-        [
-          "Change to ECL models",
-          "(2,287)",
-          "(5)",
-          "2,361",
-          "37",
-          "(74)",
-          "(26)",
-          "\u2014",
-          "6",
-          "",
-          "",
-          ""
-        ],
-        [
-          "New lending and assets purchased",
-          "5 8",
-          "33,894",
-          "43",
-          "1,170",
-          "58",
-          "164",
-          "40",
-          "35,228",
-          "141",
-          "",
-          ""
-        ],
-        [
-          "Redemptions, repayments and assets sold",
-          "6 8",
-          "(38,081)",
-          "(44)",
-          "(4,663)",
-          "(69)",
-          "(1,242)",
-          "(79)",
-          "(43,986)",
-          "(192)",
-          "",
-          ""
-        ],
-        [
-          "Changes in risk parameters and other movements",
-          "7",
-          "1,061",
-          "9",
-          "(3,333)",
-          "(73)",
-          "355",
-          "169",
-          "(1,917)",
-          "105",
-          "",
-          ""
-        ],
-        [
-          "Assets written off",
-          "6",
-          "\u2014",
-          "\u2014",
-          "\u2014",
-          "\u2014",
-          "(342)",
-          "(230)",
-          "(342)",
-          "(230)",
-          "",
-          ""
-        ],
-        [
-          "At 31 December 2024",
-          "259,883",
-          "153",
-          "21,218",
-          "359",
-          "2,759",
-          "357",
-          "283,860",
-          "869",
-          "",
-          "",
-          ""
-        ],
-        [
-          "Net movement in the period",
-          "(8,328)",
-          "(17)",
-          "(2,377)",
-          "(102)",
-          "(312)",
-          "(4)",
-          "(11,017)",
-          "(123)",
-          "",
-          "",
-          ""
-        ],
-        [
-          "ECL charge/(release) to the Income Statement",
-          "(17)",
-          "(102)",
-          "226",
-          "107",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        [
-          "Less: Discount unwind",
-          "\u2014",
-          "\u2014",
-          "(24)",
-          "(24)",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        [
-          "Less: Recoveries net of collection costs",
-          "\u2014",
-          "\u2014",
-          "(12)",
-          "(12)",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        [
-          "Total ECL charge/(release) to the Income Statement",
-          "(17)",
-          "(102)",
-          "190",
-          "71",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ]
-      ],
-      "source_url": "SantanderUKplc2025AnnualReport.pdf",
-      "location": "page-75"
-    },
+    "gross_exposure": 2025.0,
+    "ecl_allowance": 180.0,
+    "coverage_ratio": 0.03,
+    "coverage_ratio_method": "disclosed",
+    "core_ecl_table": null,
     "staging_table": {
       "title": "PDF extracted table page 67.2",
       "columns": [
@@ -1092,10 +515,159 @@
           ""
         ]
       ],
-      "source_url": "SantanderUKplc2025AnnualReport.pdf",
+      "source_url": "https://www.santander.co.uk/assets/s3fs-public/documents/SantanderUKplc2025AnnualReport.pdf",
       "location": "page-67"
     },
-    "ageing_table": null,
+    "ageing_table": {
+      "title": "PDF extracted table page 78.4",
+      "columns": [
+        "Row",
+        "Value 1",
+        "Value 2",
+        "Value 3",
+        "Value 4",
+        "Value 5",
+        "Value 6",
+        "Value 7",
+        "Value 8",
+        "Value 9",
+        "Value 10"
+      ],
+      "rows": [
+        [
+          "Up to 50%",
+          "75,743",
+          "29",
+          "705",
+          "10",
+          "5,373",
+          "76,122",
+          "33",
+          "880",
+          "13",
+          "3,407"
+        ],
+        [
+          ">50-60%",
+          "33,122",
+          "17",
+          "270",
+          "6",
+          "4,375",
+          "33,067",
+          "21",
+          "317",
+          "8",
+          "2,394"
+        ],
+        [
+          ">60-70%",
+          "27,776",
+          "21",
+          "210",
+          "9",
+          "3,803",
+          "29,171",
+          "27",
+          "254",
+          "10",
+          "2,311"
+        ],
+        [
+          ">70-80%",
+          "18,466",
+          "19",
+          "122",
+          "7",
+          "5,214",
+          "17,132",
+          "27",
+          "150",
+          "12",
+          "3,458"
+        ],
+        [
+          ">80-90%",
+          "9,385",
+          "15",
+          "64",
+          "7",
+          "4,352",
+          "7,989",
+          "19",
+          "72",
+          "8",
+          "2,445"
+        ],
+        [
+          ">90-100%",
+          "2,503",
+          "10",
+          "30",
+          "4",
+          "2,099",
+          "1,452",
+          "12",
+          "38",
+          "7",
+          "888"
+        ],
+        [
+          ">100%",
+          "273",
+          "26",
+          "49",
+          "14",
+          "16",
+          "280",
+          "33",
+          "56",
+          "20",
+          "15"
+        ],
+        [
+          "167,268",
+          "137",
+          "1,450",
+          "57",
+          "25,232",
+          "165,213",
+          "172",
+          "1,767",
+          "78",
+          "14,918",
+          ""
+        ],
+        [
+          "Collateral value",
+          "1",
+          "167,234",
+          "1,441",
+          "25,232",
+          "165,176",
+          "1,756",
+          "14,918",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Average balance weighted LTV",
+          "2",
+          "52",
+          "52",
+          "65",
+          "51",
+          "51",
+          "64",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "source_url": "https://www.santander.co.uk/assets/s3fs-public/documents/SantanderUKplc2025AnnualReport.pdf",
+      "location": "page-78"
+    },
     "impairment_movement_table": {
       "title": "PDF extracted table page 75.1",
       "columns": [
@@ -1646,10 +1218,17 @@
           ""
         ]
       ],
-      "source_url": "SantanderUKplc2025AnnualReport.pdf",
+      "source_url": "https://www.santander.co.uk/assets/s3fs-public/documents/SantanderUKplc2025AnnualReport.pdf",
       "location": "page-75"
     },
-    "ageing_buckets": [],
+    "ageing_buckets": [
+      {
+        "bucket_name": "0-60 Days",
+        "gross_amount": 33122.0,
+        "allowance_amount": null,
+        "coverage_ratio": null
+      }
+    ],
     "stage_movements": [
       {
         "stage": "Stage 1",
@@ -1674,35 +1253,28 @@
       }
     ],
     "notes": [
-      "Metric basis: Closing on-balance-sheet ECL exposure.",
-      "Company type inferred as Retail + commercial bank.",
       "Impairment movement: Stage 3 write-offs = 591.0"
     ],
     "source_documents": [
-      "SantanderUKplc2025AnnualReport.pdf"
+      "https://www.santander.co.uk/assets/s3fs-public/documents/SantanderUKplc2025AnnualReport.pdf"
     ]
   },
   "natwest": {
     "company": "Natwest",
-    "report_url": "nwm-annual-report.pdf",
+    "report_url": "https://investors.natwestgroup.com/~/media/Files/R/RBS-IR-V2/results-center/13022026/nwm-annual-report.pdf",
     "report_period": null,
     "model_structure": {
       "value": "3-stage IFRS 9 model; Segmentation logic disclosed",
       "evidence": [
         {
           "text": "Stage 1 and \u00a33 million in Stage 2 (2024 \u2013 \u00a38 million (Stage 1) and Stage 3 provisions are not subject to the same level of",
-          "source_url": "nwm-annual-report.pdf",
-          "location": "page-43"
+          "source_url": "https://investors.natwestgroup.com/~/media/Files/R/RBS-IR-V2/results-center/13022026/nwm-annual-report.pdf",
+          "location": null
         },
         {
-          "text": "comprehensive framework has been established that incorporates requirements for performing exposures in Stage 1 and Stage 2.",
-          "source_url": "nwm-annual-report.pdf",
-          "location": "page-43"
-        },
-        {
-          "text": "- Stage 1 24,507 18,759 22,708 17,789",
-          "source_url": "nwm-annual-report.pdf",
-          "location": "page-129"
+          "text": "Stage 1 Stage 2 Stage 3 Total",
+          "source_url": "https://investors.natwestgroup.com/~/media/Files/R/RBS-IR-V2/results-center/13022026/nwm-annual-report.pdf",
+          "location": null
         }
       ]
     },
@@ -1710,24 +1282,24 @@
       "value": "4 scenarios: Base, Upside, Downside, Extreme",
       "evidence": [
         {
+          "text": "important considerations when determining the amount of lifetime economic scenarios, including base case, upside, downside and",
+          "source_url": "https://investors.natwestgroup.com/~/media/Files/R/RBS-IR-V2/results-center/13022026/nwm-annual-report.pdf",
+          "location": null
+        },
+        {
           "text": "Upside Base case Downside downside average Upside Base case Downside downside average",
-          "source_url": "nwm-annual-report.pdf",
-          "location": "page-41"
+          "source_url": "https://investors.natwestgroup.com/~/media/Files/R/RBS-IR-V2/results-center/13022026/nwm-annual-report.pdf",
+          "location": null
         },
         {
           "text": "scenarios against a set of 1,000 model simulations to determine weights than the upside-biased scenario.",
-          "source_url": "nwm-annual-report.pdf",
-          "location": "page-41"
+          "source_url": "https://investors.natwestgroup.com/~/media/Files/R/RBS-IR-V2/results-center/13022026/nwm-annual-report.pdf",
+          "location": null
         },
         {
-          "text": "scenarios and assigning appropriate probability weights.",
-          "source_url": "nwm-annual-report.pdf",
-          "location": "page-40"
-        },
-        {
-          "text": "case, they comprised upside, downside and extreme downside",
-          "source_url": "nwm-annual-report.pdf",
-          "location": "page-40"
+          "text": "The probability weight for the base case is determined including the potential for a robust recovery on the upside and",
+          "source_url": "https://investors.natwestgroup.com/~/media/Files/R/RBS-IR-V2/results-center/13022026/nwm-annual-report.pdf",
+          "location": null
         }
       ]
     },
@@ -1735,356 +1307,319 @@
       "value": "PD disclosed; LGD disclosed; EAD disclosed; Forward-looking variables disclosed",
       "evidence": [
         {
-          "text": "automated or relationship manager self-sanctioning within the IFRS 9 models provide PD, exposure at default (EAD) and LGD for",
-          "source_url": "nwm-annual-report.pdf",
-          "location": "page-39"
+          "text": "other financial institutions, are typically managed on an individual Customer probability of default (PD) and facility LGD are",
+          "source_url": "https://investors.natwestgroup.com/~/media/Files/R/RBS-IR-V2/results-center/13022026/nwm-annual-report.pdf",
+          "location": null
+        },
+        {
+          "text": "(3) In 2025, we continued to refine our methodology for estimating facilitated emissions and updated the scope for syndicated lending to exclude passive best-efforts roles, ensuring only",
+          "source_url": "https://investors.natwestgroup.com/~/media/Files/R/RBS-IR-V2/results-center/13022026/nwm-annual-report.pdf",
+          "location": null
+        },
+        {
+          "text": "Credit quality and loss given default (LGD) are reviewed annually.",
+          "source_url": "https://investors.natwestgroup.com/~/media/Files/R/RBS-IR-V2/results-center/13022026/nwm-annual-report.pdf",
+          "location": null
         },
         {
           "text": "other financial institutions, are typically managed on an individual Customer probability of default (PD) and facility LGD are",
-          "source_url": "nwm-annual-report.pdf",
-          "location": "page-39"
+          "source_url": "https://investors.natwestgroup.com/~/media/Files/R/RBS-IR-V2/results-center/13022026/nwm-annual-report.pdf",
+          "location": null
         },
         {
-          "text": "The IFRS 9 PD, EAD and LGD models are subject to NatWest scenario outlook.",
-          "source_url": "nwm-annual-report.pdf",
-          "location": "page-43"
+          "text": "automated or relationship manager self-sanctioning within the IFRS 9 models provide PD, exposure at default (EAD) and LGD for",
+          "source_url": "https://investors.natwestgroup.com/~/media/Files/R/RBS-IR-V2/results-center/13022026/nwm-annual-report.pdf",
+          "location": null
         },
         {
-          "text": "adjusted for behavioural trends where applicable, such as table, with the simulation affecting both PDs and LGDs.",
-          "source_url": "nwm-annual-report.pdf",
-          "location": "page-43"
+          "text": "Purposeful Leadership score (4) 77% 74%",
+          "source_url": "https://investors.natwestgroup.com/~/media/Files/R/RBS-IR-V2/results-center/13022026/nwm-annual-report.pdf",
+          "location": null
         }
       ]
     },
-    "gross_exposure": 24743.0,
-    "ecl_allowance": -51.0,
-    "coverage_ratio": 0.002061189023158065,
+    "gross_exposure": 5.0,
+    "ecl_allowance": -32.0,
+    "coverage_ratio": 6.4,
     "coverage_ratio_method": "derived",
-    "exposure_unit": "GBP m",
-    "ecl_unit": "GBP m",
-    "metric_basis": "Third-party loans within ECL framework",
-    "company_type": "Investment / markets bank",
     "core_ecl_table": {
-      "title": "PDF extracted table page 47.1",
+      "title": "PDF extracted table page 78.1",
       "columns": [
         "Row",
         "Value 1",
         "Value 2",
         "Value 3",
-        "Value 4"
+        "Value 4",
+        "Value 5"
       ],
       "rows": [
         [
-          "Loans by geography",
-          "1,044",
-          "23,407",
-          "292",
-          "24,743"
+          "2025",
+          "2024",
+          "2025",
+          "2024",
+          "",
+          ""
         ],
         [
-          "- UK",
-          "295",
-          "8,875",
+          "Called-up share capital - at 1 January and 31 December",
+          "21",
+          "400",
+          "400",
+          "400",
+          "400"
+        ],
+        [
+          "Paid-in equity - at 1 January",
+          "1,496",
+          "904",
+          "1,496",
+          "904",
+          ""
+        ],
+        [
+          "Redeemed",
+          "(904)",
           "-",
-          "9,170"
-        ],
-        [
-          "- Other Europe",
-          "686",
-          "5,431",
-          "242",
-          "6,359"
-        ],
-        [
-          "- RoW",
-          "63",
-          "9,101",
-          "50",
-          "9,214"
-        ],
-        [
-          "Loans by stage and asset quality",
-          "1,044",
-          "23,407",
-          "292",
-          "24,743"
-        ],
-        [
-          "Stage 1",
-          "893",
-          "23,322",
-          "292",
-          "24,507"
-        ],
-        [
-          "- AQ1-AQ4",
-          "294",
-          "20,866",
-          "292",
-          "21,452"
-        ],
-        [
-          "- AQ5-AQ8",
-          "599",
-          "2,456",
+          "(904)",
           "-",
-          "3,055"
+          ""
         ],
         [
-          "Stage 2",
-          "129",
-          "85",
-          "-",
-          "214"
+          "Issued",
+          "600",
+          "592",
+          "600",
+          "592",
+          ""
         ],
         [
-          "- AQ1-AQ4",
-          "-",
-          "69",
-          "-",
-          "69"
+          "At 31 December",
+          "21",
+          "1,192",
+          "1,496",
+          "1,192",
+          "1,496"
         ],
         [
-          "- AQ5-AQ8",
-          "129",
-          "16",
-          "-",
-          "145"
+          "Share premium account - at 1 January and 31 December",
+          "1,946",
+          "1,946",
+          "1,946",
+          "1,946",
+          ""
         ],
         [
-          "Stage 3",
-          "22",
+          "Merger reserve - at 1 January",
+          "(11)",
+          "(14)",
           "-",
           "-",
-          "22"
+          ""
         ],
         [
-          "- AQ10",
-          "22",
+          "Amortisation",
+          "3",
+          "3",
           "-",
           "-",
-          "22"
+          ""
         ],
         [
-          "of which: individual",
-          "15",
+          "At 31 December",
+          "(8)",
+          "(11)",
           "-",
           "-",
-          "15"
+          ""
         ],
         [
-          "of which: collective",
-          "7",
+          "FVOCI reserve - at 1 January",
+          "25",
+          "13",
+          "9",
           "-",
-          "-",
-          "7"
+          ""
         ],
         [
-          "- ECL measurement (years)",
-          "4",
-          "4",
-          "nm",
-          "4"
+          "Unrealised gains",
+          "17",
+          "20",
+          "14",
+          "14",
+          ""
         ],
         [
-          "- IFRS 9 (%)",
-          "1.23",
-          "0.17",
-          "0.01",
-          "0.20"
-        ],
-        [
-          "- Basel (%)",
-          "1.30",
-          "0.15",
-          "0.01",
-          "0.19"
-        ],
-        [
-          "ECL provisions by geography",
-          "26",
-          "24",
+          "Realised losses/(gains)",
           "1",
-          "51"
-        ],
-        [
-          "- UK",
-          "7",
-          "10",
-          "-",
-          "17"
-        ],
-        [
-          "- Other Europe",
-          "12",
-          "6",
-          "1",
-          "19"
-        ],
-        [
-          "- RoW",
-          "7",
-          "8",
-          "-",
-          "15"
-        ],
-        [
-          "ECL provisions by stage",
-          "26",
-          "24",
-          "1",
-          "51"
-        ],
-        [
-          "- Stage 1",
-          "5",
-          "22",
-          "1",
-          "28"
-        ],
-        [
-          "- Stage 2",
-          "6",
+          "(5)",
           "2",
-          "-",
-          "8"
+          "(2)",
+          ""
         ],
         [
-          "- Stage 3",
+          "Tax",
+          "(6)",
+          "(3)",
+          "(6)",
+          "(3)",
+          ""
+        ],
+        [
+          "At 31 December",
+          "37",
+          "25",
+          "19",
+          "9",
+          ""
+        ],
+        [
+          "Cash flow hedging reserve - at 1 January",
+          "(177)",
+          "(164)",
+          "(204)",
+          "(187)",
+          ""
+        ],
+        [
+          "Amount recognised in equity (1)",
+          "(102)",
+          "(299)",
+          "(87)",
+          "(290)",
+          ""
+        ],
+        [
+          "Reclassification of OCI to P&L (2)",
+          "229",
+          "270",
+          "235",
+          "257",
+          ""
+        ],
+        [
+          "Tax",
+          "(41)",
+          "16",
+          "(41)",
+          "16",
+          ""
+        ],
+        [
+          "At 31 December",
+          "(91)",
+          "(177)",
+          "(97)",
+          "(204)",
+          ""
+        ],
+        [
+          "Foreign exchange reserve - at 1 January",
+          "87",
+          "100",
+          "(142)",
+          "(157)",
+          ""
+        ],
+        [
+          "Retranslation of net assets",
+          "(27)",
+          "(98)",
+          "(100)",
+          "(14)",
+          ""
+        ],
+        [
+          "Foreign currency gains/(losses) on hedges of net assets",
+          "19",
           "15",
-          "-",
-          "-",
-          "15"
+          "49",
+          "(7)",
+          ""
         ],
         [
-          "of which: individual",
-          "8",
-          "-",
-          "-",
-          "8"
+          "Recycled to profit or loss on disposal of businesses",
+          "31",
+          "70",
+          "76",
+          "36",
+          ""
         ],
         [
-          "of which: collective",
-          "7",
-          "-",
-          "-",
-          "7"
+          "At 31 December",
+          "110",
+          "87",
+          "(117)",
+          "(142)",
+          ""
         ],
         [
-          "ECL provisions coverage (%)",
-          "2.49",
-          "0.10",
-          "0.34",
-          "0.21"
+          "Retained earnings - at 1 January",
+          "3,163",
+          "3,195",
+          "3,314",
+          "3,407",
+          ""
         ],
         [
-          "- Stage 1 (%)",
-          "0.56",
-          "0.09",
-          "0.34",
-          "0.11"
+          "Profit attributable to ordinary shareholders and other equity owners",
+          "275",
+          "53",
+          "265",
+          "(33)",
+          ""
         ],
         [
-          "- Stage 2 (%)",
-          "4.65",
-          "2.35",
+          "Paid-in equity dividends paid",
+          "(108)",
+          "(73)",
+          "(108)",
+          "(73)",
+          ""
+        ],
+        [
+          "Redemption/reclassification of paid-in equity",
+          "59",
           "-",
-          "3.74"
+          "59",
+          "-",
+          ""
         ],
         [
-          "- Stage 3 (%)",
-          "68.18",
-          "-",
-          "-",
-          "68.18"
-        ],
-        [
-          "ECL (release)/charge - Third party",
+          "- gross",
+          "1",
           "4",
           "-",
+          "1",
+          ""
+        ],
+        [
+          "- tax",
+          "(6)",
+          "8",
+          "(6)",
+          "8",
+          ""
+        ],
+        [
+          "- gross",
+          "5",
+          "(13)",
+          "5",
+          "(13)",
+          ""
+        ],
+        [
+          "- tax",
           "(1)",
-          "3"
-        ],
-        [
-          "Amounts written-off",
-          "1",
-          "-",
-          "-",
-          "1"
-        ],
-        [
-          "Other financial assets by asset quality (3)",
-          "285",
-          "12,653",
-          "21,982",
-          "34,920"
-        ],
-        [
-          "- AQ1-AQ4",
-          "278",
-          "12,499",
-          "21,982",
-          "34,759"
-        ],
-        [
-          "- AQ5-AQ8",
-          "7",
-          "154",
-          "-",
-          "161"
-        ],
-        [
-          "Off-balance sheet",
-          "6,791",
-          "8,997",
-          "-",
-          "15,788"
-        ],
-        [
-          "- Loan commitments",
-          "6,772",
-          "8,410",
-          "-",
-          "15,182"
-        ],
-        [
-          "- Financial guarantees",
-          "19",
-          "587",
-          "-",
-          "606"
-        ],
-        [
-          "Off-balance sheet by asset quality (3)",
-          "6,791",
-          "8,997",
-          "-",
-          "15,788"
-        ],
-        [
-          "- AQ1-AQ4",
-          "6,125",
-          "8,713",
-          "-",
-          "14,838"
-        ],
-        [
-          "- AQ5-AQ8",
-          "665",
-          "284",
-          "-",
-          "949"
-        ],
-        [
-          "- AQ10",
-          "1",
-          "-",
-          "-",
-          "1"
+          "16",
+          "(1)",
+          "16",
+          ""
         ]
       ],
-      "source_url": "nwm-annual-report.pdf",
-      "location": "page-47"
+      "source_url": "https://investors.natwestgroup.com/~/media/Files/R/RBS-IR-V2/results-center/13022026/nwm-annual-report.pdf",
+      "location": "page-78"
     },
     "staging_table": {
       "title": "PDF extracted table page 47.1",
@@ -2405,7 +1940,7 @@
           "1"
         ]
       ],
-      "source_url": "nwm-annual-report.pdf",
+      "source_url": "https://investors.natwestgroup.com/~/media/Files/R/RBS-IR-V2/results-center/13022026/nwm-annual-report.pdf",
       "location": "page-47"
     },
     "ageing_table": null,
@@ -2600,7 +2135,7 @@
           ""
         ]
       ],
-      "source_url": "nwm-annual-report.pdf",
+      "source_url": "https://investors.natwestgroup.com/~/media/Files/R/RBS-IR-V2/results-center/13022026/nwm-annual-report.pdf",
       "location": "page-50"
     },
     "ageing_buckets": [],
@@ -2628,12 +2163,10 @@
       }
     ],
     "notes": [
-      "Metric basis: Third-party loans within ECL framework.",
-      "Company type inferred as Investment / markets bank.",
       "Impairment movement: Stage 3 write-offs = 1.0"
     ],
     "source_documents": [
-      "nwm-annual-report.pdf"
+      "https://investors.natwestgroup.com/~/media/Files/R/RBS-IR-V2/results-center/13022026/nwm-annual-report.pdf"
     ]
   }
 }

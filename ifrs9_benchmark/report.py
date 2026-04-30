@@ -25,13 +25,23 @@ def table_to_markdown(table: TableData | None) -> str:
     for row in table.rows:
         padded = list(row) + [""] * max(0, len(header) - len(row))
         lines.append("| " + " | ".join(_md_escape(str(cell)) for cell in padded[: len(header)]) + " |")
-    lines.append(f"\nSource: {table.source_url}")
+    location = f" ({table.location})" if table.location else ""
+    lines.append(f"\nSource: {table.source_url}{location}")
     return "\n".join(lines)
 
 
 def _joined_values(values: list[str]) -> str:
     filtered = [v for v in values if v]
     return "; ".join(filtered) if filtered else "n/a"
+
+
+def _evidence_text(company: CompanyBenchmark, field_name: str) -> str:
+    field = getattr(company, field_name)
+    parts = []
+    for item in field.evidence:
+        prefix = f"{item.location}: " if item.location else ""
+        parts.append(f"{prefix}{item.text}")
+    return _joined_values(parts)
 
 
 def build_markdown_report(companies: list[CompanyBenchmark]) -> str:
@@ -52,6 +62,14 @@ def build_markdown_report(companies: list[CompanyBenchmark]) -> str:
     for company in companies:
         lines.append(f"- **{company.company}:** {company.report_url} ({company.report_period or 'period not detected'})")
     lines.append("")
+    company_types = {c.company_type for c in companies if c.company_type}
+    if len(company_types) > 1:
+        lines.append("## Comparability warning")
+        lines.append("")
+        lines.append("The selected firms are not the same business model, so raw ECL coverage is not an apples-to-apples metric without portfolio context.")
+        for company in companies:
+            lines.append(f"- **{company.company}:** {company.company_type or 'Type not inferred'}")
+        lines.append("")
 
     lines.append("## 1) Core ECL / Coverage side-by-side")
     lines.append("")
@@ -62,8 +80,10 @@ def build_markdown_report(companies: list[CompanyBenchmark]) -> str:
 
     metrics = [
         ("Gross exposure", lambda c: fmt_number(c.gross_exposure)),
-        ("ECL allowance", lambda c: fmt_number(c.ecl_allowance)),
+        ("ECL allowance", lambda c: fmt_number(abs(c.ecl_allowance) if c.ecl_allowance is not None else None)),
         ("Coverage ratio", lambda c: fmt_percent(c.coverage_ratio)),
+        ("Units", lambda c: c.exposure_unit or "n/a"),
+        ("Metric basis", lambda c: c.metric_basis or "n/a"),
         ("Coverage method", lambda c: c.coverage_ratio_method or "n/a"),
     ]
     for label, accessor in metrics:
@@ -104,8 +124,9 @@ def build_markdown_report(companies: list[CompanyBenchmark]) -> str:
 
         total = sum(b.gross_amount or 0 for b in company.ageing_buckets)
         pct_120 = (d120_plus.gross_amount / total * 100) if d120_plus and d120_plus.gross_amount and total else None
+        total_display = fmt_number(total) if company.ageing_buckets else "n/a"
 
-        row = f"| {company.company} | {fmt_bucket(not_past_due)} | {fmt_bucket(d0_60)} | {fmt_bucket(d60_120)} | {fmt_bucket(d120_plus)} | {fmt_number(total)} | {fmt_percent(pct_120)} |"
+        row = f"| {company.company} | {fmt_bucket(not_past_due)} | {fmt_bucket(d0_60)} | {fmt_bucket(d60_120)} | {fmt_bucket(d120_plus)} | {total_display} | {fmt_percent(pct_120)} |"
         lines.append(row)
     lines.append("")
 
@@ -127,9 +148,9 @@ def build_markdown_report(companies: list[CompanyBenchmark]) -> str:
     lines.append("| --- |" + " | ".join("---" for _ in companies) + " |")
 
     evidence_items = [
-        ("Model structure", lambda c: _joined_values([e.text for e in c.model_structure.evidence])),
-        ("Scenario design", lambda c: _joined_values([e.text for e in c.scenario_design.evidence])),
-        ("Key parameters", lambda c: _joined_values([e.text for e in c.key_parameters.evidence])),
+        ("Model structure", lambda c: _evidence_text(c, "model_structure")),
+        ("Scenario design", lambda c: _evidence_text(c, "scenario_design")),
+        ("Key parameters", lambda c: _evidence_text(c, "key_parameters")),
     ]
     for label, accessor in evidence_items:
         row = f"| {label} |" + " | ".join(_md_escape(accessor(c)[:500] + "..." if len(accessor(c)) > 500 else accessor(c)) for c in companies) + " |"

@@ -18,7 +18,7 @@ The selected firms are not the same business model, so raw ECL coverage is not a
 | Metric |Barclays UK | Santander UK | Natwest |
 | --- |--- | --- | --- |
 | Gross exposure |172,415.0 | 293,493.0 | 24,743.0 |
-| ECL allowance |1,645.0 | 812.0 | 51.0 |
+| ECL allowance |-1,645.0 | -812.0 | -51.0 |
 | Coverage ratio |1.0% | 0.3% | 0.2% |
 | Units |GBP m | GBP m | GBP m |
 | Metric basis |Gross loans and advances vs Total ECL (cross-page) | Closing on-balance-sheet ECL exposure | Third-party loans within ECL framework |
